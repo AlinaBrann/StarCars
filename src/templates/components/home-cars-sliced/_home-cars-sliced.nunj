@@ -1,0 +1,19 @@
+{% from "../card/_card.nunj" import card %}
+{% macro carsSliced(props) %}
+    <section class="cars-sliced">
+        <div class="row">
+            {% for car in cars.slice(props.slice)%}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    {{ card({
+                        name: car.name,
+                        img: car.img,
+                        price: car.price,
+                        new: car.new,
+                        forWinter: car.forWinter
+                    })}}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+{% endmacro %}

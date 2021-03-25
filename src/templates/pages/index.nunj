@@ -2,7 +2,9 @@
 
 {% from "../components/button/_button.nunj" import button %}
 {% from "../components/icon/_icon.nunj" import icon %}
+{% from "../components/card/_card.nunj" import card %}
 {% from "../components/filter/_filter.nunj" import filter %}
+{% from "../components/home-cars-sliced/_home-cars-sliced.nunj" import carsSliced %}
 
 {% block title %}Главная / {{ super() }}{% endblock title %}
 
@@ -16,6 +18,9 @@
 			title: home.filterTitle,
 			fakeFilter: true
 		}) }}
+		{{ carsSliced({
+			slice: "0,2"
+		})}}
 	</div>
 	{% include '../components/footer/_footer.nunj' %}
 {% endblock content %}

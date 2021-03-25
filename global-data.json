@@ -222,5 +222,21 @@
 				}
 			]
 		}
-	}
+	},
+	"cars": [
+		{
+			"name": "Lamborghini Urus",
+			"price": "75 000 ₽",
+			"img": "car-1.jpg",
+			"new": true,
+			"forWinter": true
+		},
+		{
+			"name": "Mercedes-Benz G-класс G63 AMG special edition Pokras Lampas collab.",
+			"price": "75 000 ₽",
+			"img": "car-2.jpg",
+			"new": false,
+			"forWinter": true
+		}
+	]
 }

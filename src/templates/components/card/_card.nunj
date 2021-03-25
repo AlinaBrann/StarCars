@@ -1,0 +1,22 @@
+{% macro card(props) %}
+    <div class="card">
+        <a href="/">
+            <div class="card__stickers">
+                {% if props.new %}
+                    <div class="card__sticker">Новинка</div>
+                {% endif %}
+                {% if props.forWinter %}
+                    <div class="card__sticker">Подходит для зимы</div>
+                {% endif %}
+            </div>
+            <div class="card__img-wrapper">
+                <img src="media/img/cars/{{ props.img }}" alt="{{ props.name }}" class="card__img">
+            </div>
+            <div class="card__info">
+                <div class="card__title{% if props.name.length > 60 %} _small{% endif %}">{{ props.name }}</div>
+                <div class="card__price">{{ props.price }}</div>
+            </div>
+        </a>
+            
+    </div>
+{% endmacro%}

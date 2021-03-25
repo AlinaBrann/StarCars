@@ -41,7 +41,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                <div class="footer__legal-info flex _aic">
+                <div class="footer__legal-info footer__text flex _aic">
                     <div class="footer-copyright">
                         {{ copyright }} 
                         <span class="footer-copyright__year"></span>

@@ -27,23 +27,10 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 	$(() => {
 		// Remove _loading modificator
 		this.dom.$html.removeClass('_loading');
-	
-
-		var menu = $('.header-menu-button');
-		var players = $('.header-players-button');
-		var close = $('.header-menu-close')
-		menu.on('click', function(){
-			$(this).parents('.header').toggleClass('_menu-opened');
-		});
-		players.on('click', function(){
-			$(this).parents('.header').toggleClass('_players-opened');
-		});
-		close.on('click', function(){
-			$(this).parents('.header').removeClass('_menu-opened _players-opened');
-		});
-		var copyright = new Date().getFullYear();
-		$('.footer-copyright__year').text(copyright);
 		
+		let copyright = new Date().getFullYear();
+
+		$('.footer-copyright__year').text(copyright);
 		
 	});
 }();
