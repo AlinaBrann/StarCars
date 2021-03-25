@@ -1,0 +1,35 @@
+{% macro filter(props) %}
+    <section class="filter">
+        <h2 class="filter__title">{{ props.title }}</h2>
+        <div class="filter-parameters _text-type">
+            <div class="filter-parameters__title">{{ filterBlock.byType.title }}</div>
+            <ul class="filter-parameters-list">
+                {% for item in  filterBlock.byType.options %}
+                    <li class="filter-parameters-list__item"{% if props.fakeFilter != true %} data-value="{{ item.value }}"{% endif %}>
+                        {% if props.fakeFilter %}
+                            <a href="{{ item.path }}" class="filter-parameters-list__text">{{ item.name }}</a>
+                        {% else %}
+                            <span class="filter-parameters-list__text">{{ item.name }}</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="filter-parameters _image-type">
+            <div class="filter-parameters__title">{{ filterBlock.byBrand.title }}</div>
+            <ul class="filter-parameters-list _jcc">
+                {% for item in  filterBlock.byBrand.options %}
+                    <li class="filter-parameters-list__item"{% if props.fakeFilter != true %} data-value="{{ item.value }}"{% endif %}>
+                        {% if props.fakeFilter %}
+                            <a href="{{ item.path }}">
+                        {% endif %}
+                                <img src="media/img/brands/{{ item.logo }}" class="filter-parameters-list__logo" alt="{{ item.value }}">
+                        {% if props.fakeFilter %}
+                            </a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endmacro%}

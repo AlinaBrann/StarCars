@@ -1,0 +1,21 @@
+{% from "../icon/_icon.nunj" import icon %}
+
+{% macro socialContacts(props)%}
+    <div class="social-contacts{% if props.class %} {{ props.class }}{% endif %}">
+        <a href="tel:{{ phone }}" class="social-contacts__phone">{{ phone }}</a>
+        <ul class="social-contacts-soclinks">
+            {% for item in social %}
+                {% if item.separately %}
+                    <li class="social-contacts-soclinks__item">
+                        <a href="{{ item.link }}" title="{{ item.link }}" target="_blank">
+                            {{ icon ({
+                                class: "social-contacts-soclinks__icon",
+                                name: item.icon
+                            }) }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}

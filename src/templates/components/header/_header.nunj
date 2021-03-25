@@ -1,0 +1,35 @@
+{% from "../logo/_logo.nunj" import logo %}
+{% from "../social-contacts/_social-contacts.nunj" import socialContacts %}
+
+<header class="header">
+    <div class="header__container container">
+        <div class="row _aic">
+            <div class="col-sm-4 col-lg-4">
+                <ul class="header-nav">
+                    {% for nav in menuItems %}
+                        <li class="header-nav__item">
+                            <a href="{{ nav.path }}" class="header-nav__link">
+                                {{ nav.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm-4 col-lg-4">
+                <div class="flex _jcc">
+                    {{ logo() }}
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-4">
+                <div class="header-contacts flex _jcfe">
+
+                    {% include '../language-switcher/_language-switcher.nunj'%}
+
+                    {{ socialContacts({
+                        class: "_small _white"
+                    }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

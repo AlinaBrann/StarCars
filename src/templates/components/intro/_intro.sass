@@ -1,0 +1,21 @@
+.intro
+    position: relative
+    min-height: 90vh
+    padding-top: rem(33px)
+    background: url('../img/home-background.jpg') no-repeat center
+    background-size: cover
+    &:before
+        +b
+        +size(100%)
+        top: 0
+        background: linear-gradient(180deg, #091B24 0%, rgba(9, 27, 36, 0.2) 100%)
+        pointer-events: none
+    &__title
+        margin-bottom: 32px
+        font-size: 36px
+        line-height: 39.6px
+        text-align: center
+        +min-screen($screen-lg)
+            margin-bottom: rem(32px)
+            font-size: rem(72px)
+            line-height: rem(79.2px)

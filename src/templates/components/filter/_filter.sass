@@ -1,0 +1,70 @@
+.filter
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    +min-screen($screen-lg)
+        padding: rem(80px) 0
+    &__title
+        margin-bottom: 24px
+        font-size: 32px
+        line-height: 35px
+        +min-screen($screen-lg)
+            margin-bottom: rem(40px)
+            font-size: rem(48px)
+            line-height: rem(52.8px)
+    &-parameters
+        &._image-type
+            width: 100%
+        &__title
+            margin-bottom: 16px
+            color: $brand_color
+            +min-screen($screen-lg)
+                margin-bottom: rem(18px)
+            ._image-type &
+                margin-bottom: 40px
+        &-list
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            &__item
+                display: flex
+                align-items: center
+                ._text-type &
+                    font-size: 18px
+                    line-height: 36px
+                    &:last-of-type
+                        &:after
+                            display: none
+                    &:after
+                        content: ''
+                        +size(5px)
+                        display: inline-block
+                        margin: 0 15px
+                        background: #FFF
+                        border-radius: 50%
+                    +min-screen($screen-lg)
+                        margin-bottom: rem(44px)
+                        font-size: rem(24px)
+                        line-height: rem(40px)
+                        &:after
+                            margin: 0 rem(24px)
+                ._image-type &
+                    margin: 0 2.7%
+            &__text
+                position: relative
+                &:before
+                    +b
+                    top: calc(100% + 7px)
+                    width: 0
+                    height: 2px
+                    background: #194FDB
+                    box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+                    transition: width .5s
+                &:hover
+                    &:before
+                        width: 100%
+            &__logo
+                +min-screen($screen-lg)
+                    max-width: rem(120px)
+                    max-height: rem(58.73px)

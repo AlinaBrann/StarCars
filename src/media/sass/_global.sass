@@ -7,12 +7,10 @@
 // 		border-bottom: 1px dotted transparent
 
 body
-	font-family: 'Paperfiller'
+	background: $body_bg
+	color: #FFF
+	font-family: 'Arsenal-Regular'
 	font-weight: normal
-	letter-spacing: 0.1px
-	height: calc(var(--vh, 1vh) * 100)
-	+max-screen($screen-sm)
-		overflow: hidden
 
 .clearfix
 	// zoom: 1
@@ -87,17 +85,17 @@ body
 	animation: rotating 0.65s linear infinite
 
 .animated
-	@extend .transition-active
+	@extend .transition
 	&:hover
 		@extend .transition-hover
 
 ._animated
 	opacity: 0
-	@extend .transition-active
+	@extend .transition
 	&._visible
 		opacity: 1
 
-.transition-active
+.transition
 	transition: box-shadow $default-transition-duration $default-transition-function, border-color $default-transition-duration $default-transition-function, color $default-transition-duration $default-transition-function, background $default-transition-duration $default-transition-function, border-color $default-transition-duration $default-transition-function, opacity $default-transition-duration $default-transition-function, transform $default-transition-duration $default-transition-function, fill $default-transition-duration $default-transition-function
 
 .transition-hover
@@ -113,7 +111,7 @@ body
 	overflow-y: auto
 	-webkit-overflow-scrolling: touch
 
-._flex
+.flex
 	display: flex
 
 ._jcsb

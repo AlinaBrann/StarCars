@@ -1,0 +1,13 @@
+<section class="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 flex _fdc _aic">
+                <h1 class="intro__title">{{ intro.title }}</h1>
+                {{ button( tag='a', {
+                    text: intro.button,
+                    href: intro.buttonPath
+                }) }}
+            </div>
+        </div>
+    </div>
+</section>

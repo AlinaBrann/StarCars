@@ -1,0 +1,39 @@
+.social-contacts
+    display: flex
+    align-items: center
+    &__phone
+        @extend .transition
+        ._white &
+            color: #FFF
+            &:hover
+                color: $brand_color
+        ._grey &
+            color: $brand_color
+            &:hover
+                color: #FFF
+        +min-screen($screen-lg)
+            ._small &
+                font-size: rem(21px)
+            ._big &
+                font-size: rem(32px)
+    &-soclinks
+        display: flex
+        align-items: center
+        &__icon
+            display: block
+            fill: inharit
+            @extend .transition
+            ._small &
+                +size(rem(16px))
+                margin-left: rem(23px)
+            ._big &
+                +size(30px)
+                margin-left: rem(27px)
+            ._white &
+                fill: #FFF
+                &:hover
+                    fill: $brand_color
+            ._grey &
+                fill: $brand_color
+                &:hover
+                    fill: #FFF

@@ -1,0 +1,18 @@
+.button
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 0 2px
+    height: 52px
+    font-size: 24px
+    background: $blue
+    color: #FFF
+    line-height: 1
+    border-radius: 4px
+    border: none
+    +min-screen($screen-lg)
+        width: rem(260px)
+        height: rem(52px)
+        font-size: rem(24px)
+    &._full
+        width: 100%

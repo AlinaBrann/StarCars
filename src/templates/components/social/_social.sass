@@ -1,0 +1,25 @@
+.social
+    display: flex
+    &-item
+        $parent: &
+        +size(44px)
+        background: transparentize($brand_color,.8)
+        border-radius: rem(10px)
+        @extend .transition
+        &:hover
+            background: $brand_color
+            #{$parent}
+                &__icon
+                    fill: $body_bg
+        &:not(:last-of-type)
+            margin-right: rem(20px)
+        &__link
+            +size(100%)
+            display: flex
+            align-items: center
+            justify-content: center
+        &__icon
+            display: block
+            max-width: rem(19px)
+            max-height: rem(17px)
+            fill: $brand_color

@@ -1,0 +1,7 @@
+{% macro logo(props) %}
+    <div class="logo{% if props.class %} {{ props.class }}{% endif %}">
+        <a href="/">
+            <img src="/media/img/logo.svg" class="logo__image" alt="StarCars">
+        </a>
+    </div>
+{% endmacro %}

@@ -1,0 +1,54 @@
+{% from "../logo/_logo.nunj" import logo %}
+{% from "../social-contacts/_social-contacts.nunj" import socialContacts %}
+
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="row">
+            <div class="col-md-6 flex">
+                {{ logo({
+                    class: "footer__logo"
+                }) }}
+                <ul class="footer-nav">
+                    {% for nav in footerNav %}
+                        <li class="footer-nav__item">
+                            <span class="footer-nav__title">{{ nav.title }}</span>
+                            {% if nav.subnavs %}
+                                <ul class="footer-subnav">
+                                    {% for subnav in nav.subnavs %}
+                                        <li class="footer-subnav__item">
+                                            <a href="{{ subnav.path }}" class="footer-subnav__link">{{ subnav.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="footer-info">
+                    {{ socialContacts({
+                        class: "_big _grey"
+                    }) }}
+                    <div class="footer__text">
+                        <p>{{ address }}</p>
+                        <a href="mailto:{{ mail }}">{{ mail }}</a>
+                    </div>
+                    {% include '../social/_social.nunj' %}
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="footer__legal-info flex _aic">
+                    <div class="footer-copyright">
+                        {{ copyright }} 
+                        <span class="footer-copyright__year"></span>
+                    </div>
+                    <a href="/" class="footer-policy">{{ policy }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

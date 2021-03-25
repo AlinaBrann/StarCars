@@ -1,30 +1,226 @@
 {
 	"menuItems": [
 		{
-			"name": "Главная",
+			"name": "Автомобили",
 			"path": "/"
 		},
 		{
-			"name": "Элемент меню 2",
+			"name": "Тарифы",
 			"path": "#"
 		},
 		{
-			"name": "Элемент меню 3",
+			"name": "Условия",
 			"path": "#"
 		},
 		{
-			"name": "Элемент меню 4",
+			"name": "Контакты",
 			"path": "#"
 		}
 	],
-	"someData": [
+	"languages": [
 		{
-			"title": "Item 1",
-			"text": "Desc 1"
+			"title": "Рус",
+			"value": "ru",
+			"default": true
 		},
 		{
-			"title": "Item 2",
-			"text": "Desc 2"
+			"title": "Eng",
+			"value": "eng"
 		}
-	]
+	],
+	"phone": "+7 912 345 67 89",
+	"address": "Москва, улица Минская, 2Ж, БЦ «Victory Park Plaza», офис 31",
+	"mail": "support@starcars.ru",
+	"copyright": "© StarCars, ",
+	"policy": "Соглашение какое-нибудь",
+	"social": [
+		{
+			"icon": "tg",
+			"link": "/",
+			"separately": true
+		},
+		{
+			"icon": "wu",
+			"link": "/",
+			"separately": true
+		},
+		{
+			"icon": "fb",
+			"link": "/"
+		},
+		{
+			"icon": "ig",
+			"link": "/"
+		},
+		{
+			"icon": "yt",
+			"link": "/"
+		},
+		{
+			"icon": "vk",
+			"link": "/"
+		}
+	],
+	"footerNav": [
+		{
+			"title": "Автомобили",
+			"subnavs": [
+				{
+					"title": "Внедорожники",
+					"path": "/"
+				},
+				{
+					"title": "Бизнес",
+					"path": "/"
+				},
+				{
+					"title": "Премиум",
+					"path": "/"
+				},
+				{
+					"title": "Спорткары",
+					"path": "/"
+				},
+				{
+					"title": "Купе и кабриолеты",
+					"path": "/"
+				}
+			]
+		},
+		{
+			"title": "Информбюро",
+			"subnavs": [
+				{
+					"title": "Автомобили",
+					"path": "/"
+				},
+				{
+					"title": "Условия",
+					"path": "/"
+				},
+				{
+					"title": "Тарифы",
+					"path": "/"
+				},
+				{
+					"title": "Оплата",
+					"path": "/"
+				},
+				{
+					"title": "Бизнесу",
+					"path": "/"
+				}
+			]
+		},
+		{
+			"title": "По случаю",
+			"subnavs": [
+				{
+					"title": "Свадьба",
+					"path": "/"
+				},
+				{
+					"title": "День рождения",
+					"path": "/"
+				},
+				{
+					"title": "Фотосессия",
+					"path": "/"
+				},
+				{
+					"title": "Видеообзор",
+					"path": "/"
+				},
+				{
+					"title": "Подменный",
+					"path": "/"
+				}
+			]
+		}
+	],
+	"home": {
+		"filterTitle": "Выбор автомобиля"
+	},
+	"intro": {
+		"title": "Аренда премиальных <br>авто в Москве",
+		"button": "Забротировать",
+		"buttonPath": "/"
+	},
+	"filterBlock": {
+		"byType": {
+			"title": "по типу",
+			"options": [
+				{
+					"name": "Все автомобили",
+					"value": "all",
+					"path": "/"
+				},
+				{
+					"name": "Внедорожники",
+					"value": "suv",
+					"path": "/"
+				},
+				{
+					"name": "Бизнес",
+					"value": "business",
+					"path": "/"
+				},
+				{
+					"name": "Премиум",
+					"value": "premium",
+					"path": "/"
+				},
+				{
+					"name": "Спорткары",
+					"value": "sports-cars",
+					"path": "/"
+				},
+				{
+					"name": "Купе и кабриолеты",
+					"value": "coupes-convertibles",
+					"path": "/"
+				}
+			]
+		},
+		"byBrand": {
+			"title": "по марке",
+			"options": [
+				{
+					"logo": "porsche.png",
+					"value": "porsche",
+					"path": "/"
+				},
+				{
+					"logo": "mercedes.svg",
+					"value": "mercedes",
+					"path": "/"
+				},
+				{
+					"logo": "rolls-royce.svg",
+					"value": "rolls-royce",
+					"path": "/"
+				},
+				{
+					"logo": "bentley.png",
+					"value": "bentley",
+					"path": "/"
+				},
+				{
+					"logo": "ferrari.svg",
+					"value": "ferrari",
+					"path": "/"
+				},
+				{
+					"logo": "BMW.svg",
+					"value": "bmw",
+					"path": "/"
+				},
+				{
+					"logo": "lamborghini.png",
+					"value": "lamborghini",
+					"path": "/"
+				}
+			]
+		}
+	}
 }

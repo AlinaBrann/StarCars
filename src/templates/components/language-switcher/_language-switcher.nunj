@@ -1,0 +1,17 @@
+<div class="language-switcher">
+    {% for item in languages %}
+        <div class="language-switcher-radio">
+            <input 
+                type="radio" 
+                id="{{ item.value }}"
+                name="languages"
+                value="{{ item.value }}"
+                class="language-switcher-radio__input"
+                {% if item.default %}
+                    checked
+                {% endif %}
+                >
+            <label for="{{ item.value }}" class="language-switcher-radio__label">{{ item.title }}</label>
+        </div>
+    {% endfor %}
+</div>

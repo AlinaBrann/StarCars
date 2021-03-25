@@ -1,0 +1,14 @@
+<ul class="social">
+    {% for item in social %}
+        {% if item.separately != true %}
+            <li class="social-item">
+                <a href="" class="social-item__link">
+                    {{ icon({
+                        class: "social-item__icon",
+                        name: item.icon
+                    }) }}
+                </a>
+            </li>
+        {% endif%}
+    {% endfor %}
+</ul>

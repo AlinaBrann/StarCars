@@ -47,11 +47,10 @@
 =col($max-cols)
 	@for $i from 1 through $max-cols
 		&-#{$i}
-			display: flex
+			display: block
 			width: (100%/$max-cols*$i)
 
 .col
-	flex: auto
 	&-lg, &-md, &-sm, &-xs
 		@for $i from 1 through $cols-total
 			&-#{$i}

@@ -6,7 +6,7 @@ global.Draggable = Draggable;
 require("./utils/jqExtensions");
 
 // prettier-ignore
-global.ProjectName = new function ProjectName() { // eslint-disable-line
+global.ProjectName = new function StarCars() { // eslint-disable-line
 	this.env = require('./utils/ENV');
 	this.dom = require('./utils/DOM');
 	this.utils = require('./utils/Utils');
@@ -41,6 +41,8 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 		close.on('click', function(){
 			$(this).parents('.header').removeClass('_menu-opened _players-opened');
 		});
+		var copyright = new Date().getFullYear();
+		$('.footer-copyright__year').text(copyright);
 		
 		
 	});

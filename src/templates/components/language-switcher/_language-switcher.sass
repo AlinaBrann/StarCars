@@ -1,0 +1,22 @@
+.language-switcher
+    display: flex
+    align-items: center
+    margin-right: rem(40px)
+    &-radio
+        $parent: &
+        padding: 0 rem(6px)
+        font-size: rem(14px)
+        line-height: rem(20px)
+        border: none
+        &:not(:last-of-type)
+            border-right: 1px solid transparentize(#FFF, .8)
+        &__label
+            color: $grey_dark
+            @extend .transition
+        &__input
+            display: none
+            &:checked
+                + #{$parent}
+                    &__label
+                        color: #FFF
+        

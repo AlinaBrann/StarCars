@@ -1,59 +1,21 @@
 {% extends "../ext/base.nunj" %}
 
 {% from "../components/button/_button.nunj" import button %}
+{% from "../components/icon/_icon.nunj" import icon %}
+{% from "../components/filter/_filter.nunj" import filter %}
 
-{# Пример расширения существующего блока #}
-{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
-{# {% block title %}Home / {{ super() }}{% endblock title %} #}
+{% block title %}Главная / {{ super() }}{% endblock title %}
 
 {% block content %}
 
 	{% include '../components/header/_header.nunj' %}
 
+	{% include '../components/intro/_intro.nunj' %}
 	<div class="container">
-
-		<div style="padding:20px 0;">
-			{{ button({
-				className: '',
-				children: 'Buy something',
-				chevronRight: true
-			}) }}
-		</div>
-
-		<div style="padding:20px 0;">
-			
-			<h2 style="margin-bottom: 15px;">Пример использования циклов и функции range():</h2>
-			
-			<div class="row">
-				{% for i in range(1, 13)  %}
-					<span>{{ i }}</span>
-				{% endfor %}
-			</div>
-
-		</div>
-
-		<div style="padding:20px 0;">
-
-			<h2 style="margin-bottom: 15px;">Пример с переменными:</h2>
-
-			{% for item in someData %}
-				<div style="margin-bottom: 15px;">
-					<h3>{{ item.title }}</h3>
-					<p>{{ item.text }}</p>
-				</div>
-			{% endfor %}
-
-		</div>
-
-		{# Пример с функциями #}
-		<p style="margin-bottom: 20px;">{{ addAwesome('Это текст для теста функций') }}</p>
-
-		{% if DEVELOP %}
-			<div class="debug" style="margin-bottom: 20px;">
-				<h2 style="margin-bottom: 15px;">Debug:</h2>
-				<p>Эта информация будет выводиться только при DEVELOP = true.</p>
-			</div>
-		{% endif %}
-
+		{{ filter({
+			title: home.filterTitle,
+			fakeFilter: true
+		}) }}
 	</div>
+	{% include '../components/footer/_footer.nunj' %}
 {% endblock content %}
