@@ -1,0 +1,33 @@
+.wrapper__header
+	position: absolute
+	top: 0
+	left: 0
+	display: block
+	width: 100%
+.header
+	display: flex
+	width: 100%
+	align-items: flex-start
+	justify-content: space-between
+	padding: rem(20px) rem(11px) rem(20px) rem(15px)
+	font-size: rem(37px)
+	text-transform: uppercase
+	letter-spacing: 0.49px  
+	box-sizing: border-box
+	+max-screen($screen-sm)
+		padding-right: rem(18px)
+	&__logo
+		display: block
+		height: rem(30px)
+	&__contact
+		border-bottom: 3px solid transparent
+		@extend .transition-active
+		&:hover
+			border-color: currentColor 
+			@extend .transition-hover 
+		+max-screen($screen-sm)
+			width: rem(39px)
+			height: rem(23px)
+			font-size: 0
+			background: url('/media/img/MailPhenom.svg') no-repeat center
+			background-size: contain
