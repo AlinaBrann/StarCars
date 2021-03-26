@@ -31,7 +31,15 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 		let copyright = new Date().getFullYear();
 
 		$('.footer-copyright__year').text(copyright);
-		
+		$(function() {
+			var lastElement = false;
+			$("._text-type .filter-parameters-list__item").each(function() {
+				if (lastElement && lastElement.offset().top != $(this).offset().top) {
+					$(lastElement).addClass("_nobullet");
+				}
+				lastElement = $(this);
+			}).last().addClass("_nobullet");
+		});
 	});
 }();
 

@@ -3,6 +3,7 @@
     <ul class="advantages-list">
         {% for item in advantages.items %}
             <li class="advantages-list__item">
+                <div class="advantages-list__counter"><span>{{ loop.index }}</span></div>
                 <div class="advantages-list__title">{{ item.title }}</div>
                 <div class="advantages-list__text">{{ item.text }}</div>
             </li>

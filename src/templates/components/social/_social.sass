@@ -1,5 +1,10 @@
 .social
     display: flex
+    justify-content: center
+    margin-top: 27px
+    +min-screen($screen-lg)
+        margin-top: 0
+        justify-content: flex-start
     &-item
         $parent: &
         +size(44px)

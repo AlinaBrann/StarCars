@@ -4,8 +4,9 @@
 <header class="header">
     <div class="header__container container">
         <div class="row _aic">
-            <div class="col-sm-4 col-lg-4">
-                <ul class="header-nav">
+            <div class="col-xs-4 col-sm-4 col-lg-4">
+                <a href="/" class="header__location visible-xs">Москва</a>
+                <menu class="header-nav hidden-xs">
                     {% for nav in menuItems %}
                         <li class="header-nav__item">
                             <a href="{{ nav.path }}" class="header-nav__link">
@@ -13,22 +14,42 @@
                             </a>
                         </li>
                     {% endfor %}
-                </ul>
+                </menu>
             </div>
-            <div class="col-sm-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-lg-4">
                 <div class="flex _jcc">
                     {{ logo() }}
                 </div>
             </div>
-            <div class="col-sm-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-lg-4">
                 <div class="header-contacts flex _jcfe">
 
                     {% include '../language-switcher/_language-switcher.nunj'%}
-
+                    <a href="tel:{{ phone }}" class="header__phone visible-xs">
+                        {{ icon({
+                            class: "social-contacts__phone-icon",
+                            name: "phone",
+                            width: "22",
+                            height: "22"
+                        }) }}
+                    </a>
                     {{ socialContacts({
-                        class: "_small _white"
+                        class: "_small _white hidden-xs"
                     }) }}
                 </div>
+            </div>
+        </div>
+        <div class="row _aic">
+            <div class="col-xs-12 col-sm-12">
+                <menu class="header-nav visible-xs">
+                    {% for nav in menuItems %}
+                        <li class="header-nav__item">
+                            <a href="{{ nav.path }}" class="header-nav__link">
+                                {{ nav.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </menu>
             </div>
         </div>
     </div>

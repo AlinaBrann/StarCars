@@ -1,7 +1,11 @@
 .social-contacts
     display: flex
     align-items: center
+    flex-direction: column
+    +min-screen($screen-lg)
+        flex-direction: row
     &__phone
+        margin-bottom: 18px
         @extend .transition
         ._white &
             color: #FFF
@@ -11,7 +15,12 @@
             color: $brand_color
             &:hover
                 color: #FFF
+        ._small &
+            font-size: 21px
+        ._big &
+            font-size: 32px
         +min-screen($screen-lg)
+            margin-bottom: 0
             ._small &
                 font-size: rem(21px)
             ._big &
@@ -19,6 +28,9 @@
     &-soclinks
         display: flex
         align-items: center
+        margin-bottom: 18px
+        +min-screen($screen-lg)
+            margin-bottom: 0
         &__icon
             display: block
             fill: inharit
@@ -28,7 +40,10 @@
                 margin-left: rem(23px)
             ._big &
                 +size(30px)
-                margin-left: rem(27px)
+                margin: 0 19px
+                +min-screen($screen-lg)
+                    margin-right: 0
+                    margin-left: rem(27px)
             ._white &
                 fill: #FFF
                 &:hover

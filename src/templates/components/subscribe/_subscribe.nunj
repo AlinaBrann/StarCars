@@ -1,4 +1,4 @@
-<section class="subscribe border-block">
+<section class="subscribe border-block hidden-xs">
     <div class="row">
         <div class="col-lg-5">
             <div class="subscribe__content">

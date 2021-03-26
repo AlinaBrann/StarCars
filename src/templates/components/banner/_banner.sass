@@ -1,12 +1,16 @@
 .banner
-    padding: rem(33px) rem(30px) rem(30px)
+    padding: 36px 23px 30px
+    margin-bottom: 40px
     text-align: center
-    &._margin-left
-        margin-left: rem(40px)
-    &._margin-right
-        margin-right: rem(40px)
+    +min-screen($screen-lg)
+        padding: rem(30px) rem(30px) rem(30px)
+        margin-bottom: 0
+        &._margin-left
+            margin-left: rem(40px)
+        &._margin-right
+            margin-right: rem(40px)
     &__img
-        margin-bottom: rem(24px)
+        margin-bottom: rem(16px)
     &__title
         margin-bottom: rem(17px)
         font-size: rem(32px)

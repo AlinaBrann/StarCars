@@ -1,6 +1,10 @@
 .footer
 	color: $brand_color
-	font-size: rem(18px)
+	font-size: 18px
+	text-align: center
+	+min-screen($screen-lg)
+		font-size: rem(18px)
+		text-align: left
 	&__container
 		position: relative
 		padding-top: rem(32px)
@@ -17,13 +21,28 @@
 				width: calc(100% - #{$indent-col-md} *2 )
 	&__logo
 		width: rem(67px)
-		margin-right: 5.139vw
+		+min-screen($screen-lg)
+			margin-right: 5.139vw
 	&-nav
 		display: flex
 		flex: auto
 		justify-content: space-between
+		margin-bottom: 20px
+		+min-screen($screen-lg)
+			margin-bottom: 0
+		&__item
+			flex: 50%
+			text-align: center
+			+min-screen($screen-lg)
+				flex: auto
+				text-align: right
+			&:first-of-type
+				display: none
+				+min-screen($screen-lg)
+					display: block
 		&__title
 			display: inline-block
+			margin-bottom: 14px
 			+min-screen($screen-lg)
 				margin-bottom: rem(15px)
 				font-size: rem(21px)
@@ -35,8 +54,10 @@
 		&__link
 			display: inline-block
 			line-height: rem(24px)
-			color: transparentize(#FFF,.5)
+			color: #FFF
 			@extend .transition
+			+min-screen($screen-lg)
+				color: transparentize(#FFF,.5)
 			&:hover
 				color: #FFF
 			+min-screen($screen-lg)
@@ -46,7 +67,8 @@
 		flex-direction: column
 		justify-content: space-between
 		height: 100%
-		padding-left: 8.033vw
+		+min-screen($screen-lg)
+			padding-left: 8.033vw
 	&__text
 		line-height: rem(22px)
 		p
@@ -57,6 +79,17 @@
 				color: #FFF
 	&__legal-info
 		padding-top: rem(45px)
+		flex-direction: column
+		align-items: center
+		+min-screen($screen-lg)
+			flex-direction: row
 	&-copyright
 		margin-right: rem(20px)
+		margin-bottom: 6px
+		+min-screen($screen-lg)
+			margin-bottom: 0
+	&-policy
+		margin-bottom: 32px
+		+min-screen($screen-lg)
+			margin-bottom: 0
 	

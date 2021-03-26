@@ -41,7 +41,7 @@
 						})}}
 					</div>
 				{% endfor %}
-				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 _order-1">
 					{{ banner({ 
 						class: "_margin-left",
 						item: bannerWinter
@@ -73,7 +73,7 @@
 					</div>
 				{% endfor %}
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					{{ impeccableRental(title=impeccableRentalContent.title, class="proportional-height border-block _with-padding")}}
+					{{ impeccableRental(title=impeccableRentalContent.title, class="proportional-height border-block _with-padding hidden-xs")}}
 				</div>
 			</div>
 		</section>
@@ -91,7 +91,7 @@
 		</section>
 		<section class="cars-sliced">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 hidden-xs">
 					{{ banner({ 
 						class: "_margin-right",
 						item: bannerPorshe

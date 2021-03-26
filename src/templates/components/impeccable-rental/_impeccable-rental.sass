@@ -1,24 +1,36 @@
 .impeccable-rental
     display: flex
+    margin-bottom: 30px
+    +min-screen($screen-lg)
+        margin: 0
     &__content
         ._with-padding &
-            padding: rem(30px) rem(37px)
+            padding: 30px 15px
+            +min-screen($screen-lg)
+                padding: rem(30px) rem(37px)
     &__title
-        margin-bottom: rem(23px)
+        margin-bottom: 29px
         text-align: center
-        font-size: rem(48px)
+        font-size: 32px
         line-height: 1.1
+        +min-screen($screen-lg)
+            margin-bottom: rem(23px)
+            font-size: rem(48px)
     &-list
         &__item
             position: relative
-            padding: 0 rem(46px)
+            padding: 0 30px 0 40px
             font-size: rem(18px)
+            +min-screen($screen-lg)
+                padding: 0 rem(46px)
+                &:before
+                    left: rem(15px)
             &:not(:last-of-type)
                 margin-bottom: rem(13px)
             &:before
                 +b
                 +size(29px)
                 top: 4px
-                left: 15px
+                left: 0px
                 background: url('../img/arrow-blue.svg') no-repeat center
                 background-size: contain

@@ -8,8 +8,11 @@
 	z-index: 100
 	&__container
 		position: relative
-		padding-top: rem(20px)
-		padding-bottom: rem(22px)
+		padding-top: 15px
+		padding-bottom: 15px
+		+min-screen($screen-lg)
+			padding-top: rem(20px)
+			padding-bottom: rem(22px)
 		&:after
 			+b
 			bottom: 0
@@ -22,9 +25,26 @@
 				width: calc(100% - #{$indent-col-md} *2 )
 	&-nav
 		display: flex
-		align-items: center
+		position: relative
+		justify-content: space-between
+		padding-top: 12px
+		margin-top: 15px
+		&:after
+			+b
+			top: 0
+			left: -$indent-col-xs
+			width: calc(100% + #{$indent-col-xs} * 2)
+			height: 1px
+			background: transparentize($grey, .8)
+		+min-screen($screen-lg)
+			padding-top: 0
+			margin-top: 0
+			align-items: center
+			&:after
+				display: none
 		&__item
-			margin-right: rem(24px)
+			+min-screen($screen-lg)
+				margin-right: rem(24px)
 		&__link
 			position: relative
 			display: inline-block
