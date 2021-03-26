@@ -9,7 +9,7 @@
                     <div class="card__sticker">Подходит для зимы</div>
                 {% endif %}
             </div>
-            <div class="card__img-wrapper">
+            <div class="card__img-wrapper proportional-height">
                 <img src="media/img/cars/{{ props.item.img }}" alt="{{ props.item.name }}" class="card__img">
                 <ul class="card-parameters">
                     {% for item in props.item.parameters %}

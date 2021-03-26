@@ -15,17 +15,15 @@
         padding: 2px 6px
         margin-right: rem(10px)
         background: rgba(0, 0, 0, 0.6)
+        line-height: rem(19px)
+        letter-spacing: 1px
         border: 1px solid rgba(#FFF, 0.5)
         text-transform: uppercase
     &__img-wrapper
         position: relative
         width: 100%
-        margin-bottom: rem(12px)
+        margin-bottom: rem(9px)
         overflow: hidden
-        &:before
-            content: ''
-            display: block
-            padding-top: 64.6%
     &__img
         +size(100%)
         object-fit: cover
@@ -67,13 +65,14 @@
     &__info
         display: flex
     &__title
+        margin-top: rem(3px)
         padding-right: rem(20px)
         font-size: rem(48px)
         line-height: rem(57px)
         @extend .transition
         &._small
             font-size: rem(24px)
-            line-height: rem(36px)
+            line-height: rem(28px)
     &__price
         flex: auto
         color: $brand_color

@@ -2,19 +2,19 @@
 
 {% macro banner(props) %}
     <aside class="banner border-block{% if props.class %} {{ props.class }}{% endif %}">
-        <img src="media/img/banners/{{ props.img }}" alt="{{ props.title }}" class="banner__img">
-        <div class="banner__title">{{ props.title }}</div>
-        <div class="banner__text">{{ props.text }}</div>
+        <img src="media/img/{{ props.item.img }}" alt="{{ props.item.title }}" class="banner__img">
+        <div class="banner__title">{{ props.item.title }}</div>
+        <div class="banner__text">{{ props.item.text }}</div>
         {% if props.buttonPath %}
             {{ button( tag='a',{
                 class: "_full _dark-blue",
-                text: props.buttonText,
-                href: props.buttonPath
+                text: props.item.buttonText,
+                href: props.item.buttonPath
             }) }}
         {% else %}
             {{ button( tag='a',{
                 class: "_full _dark-blue",
-                text: props.buttonText
+                text: props.item.buttonText
             }) }}
         {% endif %}
        

@@ -1,0 +1,25 @@
+<section class="subscribe border-block">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="subscribe__content">
+                <div class="subscribe__title">{{ subscribeBlock.title }}</div>
+                <div class="subscribe__text">{{ subscribeBlock.text }}</div>
+                <form action="" class="subscribe-form">
+                    <div class="subscribe-form-input">
+                        <label for="phone" class="subscribe-form-input__label">{{ subscribeBlock.label }}</label>
+                        <input id="phone" type="text" class="input subscribe-form-input__input" value="+7 912 345 67 89">
+                    </div>
+                    {{ button({
+                        class: "_dark-blue _full",
+                        type: "submit",
+                        text: subscribeBlock.button
+                    })}}
+                </form>
+            </div>
+            
+        </div>
+        <div class="col-lg-7">
+            <img src="media/img/subscribe-bg.png" alt="">
+        </div>
+    </div>
+</section>

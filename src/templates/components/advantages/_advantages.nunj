@@ -1,0 +1,11 @@
+<section class="advantages">
+    <h2 class="advantages__title"><span>{{ advantages.title }}</span></h2>
+    <ul class="advantages-list">
+        {% for item in advantages.items %}
+            <li class="advantages-list__item">
+                <div class="advantages-list__title">{{ item.title }}</div>
+                <div class="advantages-list__text">{{ item.text }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>

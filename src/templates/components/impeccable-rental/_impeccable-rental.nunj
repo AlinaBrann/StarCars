@@ -1,0 +1,12 @@
+{% macro impeccableRental(title="", class="") %}
+    <div class="impeccable-rental{% if class %} {{ class }} {% endif %}">
+        <div class="impeccable-rental__content">
+            <div class="impeccable-rental__title">{{ title }}</div>
+            <ul class="impeccable-rental-list">
+                {% for item in impeccableRentalContent.list %}
+                    <li class="impeccable-rental-list__item">{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endmacro %}
