@@ -4,7 +4,7 @@
 {% from "../components/icon/_icon.nunj" import icon %}
 {% from "../components/card/_card.nunj" import card %}
 {% from "../components/filter/_filter.nunj" import filter %}
-{% from "../components/home-cars-sliced/_home-cars-sliced.nunj" import carsSliced %}
+{% from "../components/banner/_banner.nunj" import banner %}
 
 {% block title %}Главная / {{ super() }}{% endblock title %}
 
@@ -18,9 +18,40 @@
 			title: home.filterTitle,
 			fakeFilter: true
 		}) }}
-		{{ carsSliced({
-			slice: "0,2"
-		})}}
+		<section class="cars-sliced">
+			<div class="row">
+				{% for car in cars.slice(0, 2)%}
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						{{ card({
+							name: car.name,
+							item: car
+						})}}
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+		<section class="cars-sliced">
+			<div class="row">
+				{% for car in cars.slice(2, 3)%}
+					<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+						{{ card({
+							name: car.name,
+							item: car
+						})}}
+					</div>
+				{% endfor %}
+				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+					{{ banner({ 
+						class: "_margin-left",
+						img: bannerWinter.img,
+						title: bannerWinter.title,
+						text: bannerWinter.text,
+						buttonText: bannerWinter.buttonText,
+						buttonPath: bannerWinter.buttonPath
+					}) }}
+				</div>
+			</div>
+		</section>
 	</div>
 	{% include '../components/footer/_footer.nunj' %}
 {% endblock content %}

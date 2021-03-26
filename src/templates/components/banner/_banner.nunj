@@ -1,0 +1,22 @@
+{% from "../button/_button.nunj" import button %}
+
+{% macro banner(props) %}
+    <aside class="banner border-block{% if props.class %} {{ props.class }}{% endif %}">
+        <img src="media/img/banners/{{ props.img }}" alt="{{ props.title }}" class="banner__img">
+        <div class="banner__title">{{ props.title }}</div>
+        <div class="banner__text">{{ props.text }}</div>
+        {% if props.buttonPath %}
+            {{ button( tag='a',{
+                class: "_full _dark-blue",
+                text: props.buttonText,
+                href: props.buttonPath
+            }) }}
+        {% else %}
+            {{ button( tag='a',{
+                class: "_full _dark-blue",
+                text: props.buttonText
+            }) }}
+        {% endif %}
+       
+    </aside>
+{% endmacro %}

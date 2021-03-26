@@ -2,19 +2,27 @@
     <div class="card">
         <a href="/">
             <div class="card__stickers">
-                {% if props.new %}
+                {% if props.item.new %}
                     <div class="card__sticker">Новинка</div>
                 {% endif %}
-                {% if props.forWinter %}
+                {% if props.item.forWinter %}
                     <div class="card__sticker">Подходит для зимы</div>
                 {% endif %}
             </div>
             <div class="card__img-wrapper">
-                <img src="media/img/cars/{{ props.img }}" alt="{{ props.name }}" class="card__img">
+                <img src="media/img/cars/{{ props.item.img }}" alt="{{ props.item.name }}" class="card__img">
+                <ul class="card-parameters">
+                    {% for item in props.item.parameters %}
+                        <li class="card-parameters__item">
+                            <span class="card-parameters__title">{{ item.title }}</span>
+                            <span class="card-parameters__value">{{ item.value }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
             <div class="card__info">
-                <div class="card__title{% if props.name.length > 60 %} _small{% endif %}">{{ props.name }}</div>
-                <div class="card__price">{{ props.price }}</div>
+                <div class="card__title{% if props.item.name.length > 60 %} _small{% endif %}">{{ props.item.name }}</div>
+                <div class="card__price">{{ props.item.price }}</div>
             </div>
         </a>
             

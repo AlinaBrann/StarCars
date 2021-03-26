@@ -229,14 +229,70 @@
 			"price": "75 000 ₽",
 			"img": "car-1.jpg",
 			"new": true,
-			"forWinter": true
+			"forWinter": true,
+			"parameters": [
+				{
+					"title": "Привод",
+					"value": "Полный"
+				},
+				{
+					"title": "Разгон",
+					"value": "4,5 сек"
+				},
+				{
+					"title": "Мощность",
+					"value": "585 л.с."
+				}
+			]
 		},
 		{
 			"name": "Mercedes-Benz G-класс G63 AMG special edition Pokras Lampas collab.",
 			"price": "75 000 ₽",
 			"img": "car-2.jpg",
 			"new": false,
-			"forWinter": true
+			"forWinter": true,
+			"parameters": [
+				{
+					"title": "Привод",
+					"value": "Полный"
+				},
+				{
+					"title": "Разгон",
+					"value": "4,5 сек"
+				},
+				{
+					"title": "Мощность",
+					"value": "585 л.с."
+				}
+			]
+		},
+		{
+			"name": "Rolls-Royce Wraith",
+			"price": "65 000 ₽",
+			"img": "car-3.jpg",
+			"new": true,
+			"forWinter": true,
+			"parameters": [
+				{
+					"title": "Привод",
+					"value": "Полный"
+				},
+				{
+					"title": "Разгон",
+					"value": "4,5 сек"
+				},
+				{
+					"title": "Мощность",
+					"value": "585 л.с."
+				}
+			]
 		}
-	]
+	],
+	"bannerWinter": {
+		"img": "snow.svg",
+		"title": "Зимняя аренда",
+		"text": "<p>Кроме кабриолетов все автомобили в нашем прокате подходят для пользования в зимнее время.</p> <p>Более того, полный привод дает больше преимуществ в гололедицу.</p> <p>Посмотрите на все подходящие для зимы варианты.</p>",
+		"buttonText": "Подобрать",
+		"buttonPath": "/"
+	}
 }
