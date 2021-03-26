@@ -20,8 +20,8 @@
 		padding-left: $indent-col-sm
 		padding-right: $indent-col-sm
 	+min-screen($screen-md)
-		padding-left: $indent-col-sm
-		padding-right: $indent-col-sm
+		padding-left: $indent-col-md
+		padding-right: $indent-col-md
 	+min-screen($screen-lg)
 		padding-left: $indent-col-md
 		padding-right: $indent-col-md
@@ -35,8 +35,8 @@
 	margin-left: -$indent-col-xs 
 	margin-right: -$indent-col-xs
 	+min-screen($screen-sm)
-		margin-left: -$indent-col-xs
-		margin-right: -$indent-col-xs
+		margin-left: -$indent-col-sm
+		margin-right: -$indent-col-sm
 	+min-screen($screen-md)
 		margin-left: -$indent-col-md
 		margin-right: -$indent-col-md
@@ -65,8 +65,8 @@
 		+min-screen($screen-sm)
 			@for $i from 1 through $cols-total
 				&-#{$i}
-					padding-right: $indent-col-xs
-					padding-left: $indent-col-xs
+					padding-right: $indent-col-sm
+					padding-left: $indent-col-sm
 			+col($cols-total)
 	&-md
 		+min-screen($screen-md)
@@ -106,11 +106,11 @@
 			+offset-width($cols-total)
 
 .hidden-xs
-	+max-screen($screen-md)
+	+max-screen($screen-sm)
 		display: none !important
 
 .visible-xs
 	display: none !important 
-	+max-screen($screen-md)
+	+max-screen($screen-sm)
 		display: flex !important 
 		

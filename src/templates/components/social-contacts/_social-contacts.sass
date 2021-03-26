@@ -2,8 +2,11 @@
     display: flex
     align-items: center
     flex-direction: column
-    +min-screen($screen-lg)
+    +min-screen($screen-sm)
+        justify-content: center
         flex-direction: row
+    +min-screen($screen-md)
+        justify-content: flex-start
     &__phone
         margin-bottom: 18px
         @extend .transition
@@ -19,7 +22,7 @@
             font-size: 21px
         ._big &
             font-size: 32px
-        +min-screen($screen-lg)
+        +min-screen($screen-md)
             margin-bottom: 0
             ._small &
                 font-size: rem(21px)
@@ -29,7 +32,7 @@
         display: flex
         align-items: center
         margin-bottom: 18px
-        +min-screen($screen-lg)
+        +min-screen($screen-md)
             margin-bottom: 0
         &__icon
             display: block
@@ -41,7 +44,7 @@
             ._big &
                 +size(30px)
                 margin: 0 19px
-                +min-screen($screen-lg)
+                +min-screen($screen-md)
                     margin-right: 0
                     margin-left: rem(27px)
             ._white &

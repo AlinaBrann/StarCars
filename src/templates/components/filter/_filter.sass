@@ -42,10 +42,11 @@
                 position: relative
                 ._text-type &
                     margin-right: 20px
-                    font-size: 18px
+                    font-size: rem(18px)
                     line-height: 2
-                    +min-screen($screen-lg)
+                    +min-screen($screen-sm)
                         margin-right: rem(56px)
+                    +min-screen($screen-lg)
                         line-height: 36px
                     &:after
                         +b
@@ -54,6 +55,9 @@
                         right: -11px
                         background: #FFF
                         border-radius: 50%
+                    +min-screen($screen-sm)
+                        &:after
+                            right: rem(-32px)
                     +min-screen($screen-lg)
                         margin-bottom: rem(42px)
                         font-size: rem(24px)
@@ -64,6 +68,8 @@
                             right: rem(-32px)
                 ._image-type &
                     margin: 0 4% 51px
+                    +min-screen($screen-sm)
+                        margin: 0 3% rem(51px)
                     +min-screen($screen-lg)
                         margin: 0 2.8%
                 &._nobullet
@@ -86,6 +92,9 @@
             &__logo
                 max-height: 48px
                 max-width: 90px
+                +min-screen($screen-sm)
+                    max-width: rem(110px)
+                    max-height: rem(55px)
                 +min-screen($screen-lg)
                     max-width: rem(120px)
                     max-height: rem(58.73px)

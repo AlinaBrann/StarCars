@@ -7,17 +7,17 @@
         display: inline-block
         margin-right: 3px
         vertical-align: middle
-        font-size: 16px
+        font-size: rem(16px)
         line-height: 20px
         color: $grey_dark
-    +min-screen($screen-lg)
+    +min-screen($screen-md)
         margin-right: rem(40px)
         &:before
             display: none
     &-radio
         $parent: &
         border: none
-        +min-screen($screen-lg)
+        +min-screen($screen-md)
             font-size: rem(14px)
             line-height: rem(20px)
             padding: 0 rem(6px)
@@ -32,7 +32,7 @@
                 + #{$parent}
                     &__label
                         display: none
-                        +min-screen($screen-lg)
+                        +min-screen($screen-md)
                             display: block
                             color: #FFF
         

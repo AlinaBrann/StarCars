@@ -5,13 +5,20 @@
 // 	&:hover
 // 		color: #333
 // 		border-bottom: 1px dotted transparent
+html
+	+min-screen($screen-sm)
+		font-size: 24px
+	+min-screen($screen-md)
+		font-size: 14px
+	+min-screen($screen-lg)
+		font-size: 16px
 
 body
 	background: $body_bg
 	color: #FFF
 	font-family: 'Arsenal-Regular'
 	font-weight: normal
-
+	
 .clearfix
 	// zoom: 1
 	&:after

@@ -4,7 +4,7 @@
 <header class="header">
     <div class="header__container container">
         <div class="row _aic">
-            <div class="col-xs-4 col-sm-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-md-5 col-lg-4">
                 <a href="/" class="header__location visible-xs">Москва</a>
                 <menu class="header-nav hidden-xs">
                     {% for nav in menuItems %}
@@ -16,18 +16,18 @@
                     {% endfor %}
                 </menu>
             </div>
-            <div class="col-xs-4 col-sm-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-md-2 col-lg-4">
                 <div class="flex _jcc">
                     {{ logo() }}
                 </div>
             </div>
-            <div class="col-xs-4 col-sm-4 col-lg-4">
-                <div class="header-contacts flex _jcfe">
+            <div class="col-xs-4 col-sm-4 col-md-5 col-lg-4">
+                <div class="header-contacts flex _jcfe _aic">
 
                     {% include '../language-switcher/_language-switcher.nunj'%}
                     <a href="tel:{{ phone }}" class="header__phone visible-xs">
                         {{ icon({
-                            class: "social-contacts__phone-icon",
+                            class: "header__phone-icon",
                             name: "phone",
                             width: "22",
                             height: "22"

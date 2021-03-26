@@ -2,7 +2,7 @@
 	color: $brand_color
 	font-size: 18px
 	text-align: center
-	+min-screen($screen-lg)
+	+min-screen($screen-md)
 		font-size: rem(18px)
 		text-align: left
 	&__container
@@ -21,6 +21,8 @@
 				width: calc(100% - #{$indent-col-md} *2 )
 	&__logo
 		width: rem(67px)
+		+min-screen($screen-md)
+			margin-right: 4vw
 		+min-screen($screen-lg)
 			margin-right: 5.139vw
 	&-nav
@@ -28,22 +30,22 @@
 		flex: auto
 		justify-content: space-between
 		margin-bottom: 20px
-		+min-screen($screen-lg)
+		+min-screen($screen-md)
 			margin-bottom: 0
 		&__item
 			flex: 50%
 			text-align: center
-			+min-screen($screen-lg)
+			+min-screen($screen-md)
 				flex: auto
-				text-align: right
+				text-align: left
 			&:first-of-type
 				display: none
-				+min-screen($screen-lg)
+				+min-screen($screen-sm)
 					display: block
 		&__title
 			display: inline-block
 			margin-bottom: 14px
-			+min-screen($screen-lg)
+			+min-screen($screen-md)
 				margin-bottom: rem(15px)
 				font-size: rem(21px)
 				line-height: rem(26px)
@@ -56,11 +58,11 @@
 			line-height: rem(24px)
 			color: #FFF
 			@extend .transition
-			+min-screen($screen-lg)
+			+min-screen($screen-md)
 				color: transparentize(#FFF,.5)
 			&:hover
 				color: #FFF
-			+min-screen($screen-lg)
+			+min-screen($screen-md)
 				line-height: rem(24px)
 	&-info
 		display: flex
@@ -81,15 +83,15 @@
 		padding-top: rem(45px)
 		flex-direction: column
 		align-items: center
-		+min-screen($screen-lg)
+		+min-screen($screen-md)
 			flex-direction: row
 	&-copyright
 		margin-right: rem(20px)
 		margin-bottom: 6px
-		+min-screen($screen-lg)
+		+min-screen($screen-md)
 			margin-bottom: 0
 	&-policy
 		margin-bottom: 32px
-		+min-screen($screen-lg)
+		+min-screen($screen-md)
 			margin-bottom: 0
 	
