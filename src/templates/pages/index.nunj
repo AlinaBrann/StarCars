@@ -73,7 +73,10 @@
 					</div>
 				{% endfor %}
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					{{ impeccableRental(title=impeccableRentalContent.title, class="proportional-height border-block _with-padding hidden-xs")}}
+					{{ impeccableRental({
+						title: impeccableRentalContent.title, 
+						class:"proportional-height border-block _with-padding hidden-xs"
+					})}}
 				</div>
 			</div>
 		</section>

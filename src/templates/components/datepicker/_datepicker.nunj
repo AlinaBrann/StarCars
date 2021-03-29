@@ -1,0 +1,36 @@
+{% from "../icon/_icon.nunj" import icon %}
+
+{% macro datepicker(props)%}
+    <div class="datepicker">					
+        <div class="datepicker-input-wrapper input-wrapper">
+            <div class="input datepicker-input _left" data-start>
+                <div class="day datepicker-input__day"></div>
+                <div class="datepicker-input__block">
+                    <div class="month datepicker-input__month"></div>
+                </div>
+                {{ icon({
+                    class: "datepicker-input__icon",
+                    name: "calendar",
+                    width: "24",
+                    height: "24"
+                })}}
+            </div>
+            <input type="text" name="datepicker-start" value="" />
+        </div>
+        <div class="datepicker-input-wrapper input-wrapper">
+            <div class="input datepicker-input _right" data-end>
+                <div class="day datepicker-input__day"></div>
+                <div class="datepicker-input__block">
+                    <div class="month datepicker-input__month"></div>
+                </div>
+                {{ icon({
+                    class: "datepicker-input__icon",
+                    name: "calendar",
+                    width: "24",
+                    height: "24"
+                })}}
+            </div>
+            <input type="text" name="datepicker-end" value="" />
+        </div>
+    </div>
+{% endmacro%}

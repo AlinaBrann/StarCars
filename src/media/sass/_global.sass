@@ -175,3 +175,29 @@ body
 		display: block
 		width: 0
 		padding-top: 64.6%
+
+.page
+	padding-top: 140px
+	+min-screen($screen-md)
+		padding-top: rem(160px)
+
+.card-wrapper
+	overflow: hidden
+	&._hide
+		display: none
+
+._full-width
+	+max-screen($screen-sm)
+		width: calc(100% + #{$indent-col-xs} * 2)
+		margin-left: -$indent-col-xs
+
+.cars-sliced
+	&__title
+		margin-bottom: 32px
+		text-align: center
+		font-size: 32px
+		line-height: 48px
+		+min-screen($screen-md)
+			font-size: rem(48px)
+			line-height: rem(72px)
+			margin-bottom: rem(48px)

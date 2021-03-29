@@ -1,0 +1,47 @@
+{% from "../datepicker/_datepicker.nunj" import datepicker %}
+{% from "../button/_button.nunj" import button %}
+
+{% macro detailSidebar(props) %}
+    <aside class="detail-sidebar{% if props.class %} {{ props.class }}{% endif %}">
+        <div class="detail-sidebar-head flex">
+            <div class="detail-sidebar-head__col">
+                <div class="detail-sidebar__price">{{ props.item.price }} <span>за сутки</span></div>
+            </div>
+            <div class="detail-sidebar-head__col">
+                <ul class="detail-sidebar-price-list">
+                    {% for price in props.item.priceDetail.slice(1,3) %}
+                        <li class="detail-sidebar-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
+                    {% endfor %}
+                    <li class="detail-sidebar-price-list__item"><a href="/">Все акции и предложения</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="detail-sidebar-body">
+            <div class="hidden-xs">
+                <div class="detail-sidebar-body__title">{{ detailSidebarContent.title }}</div>
+                {{ datepicker()}}
+                <div class="flex detail-sidebar-result hidden-xs">
+                    <div class="detail-sidebar-result__col">
+                        <span>{{ detailSidebarContent.duration }}</span>
+                        <div class="detail-sidebar-total-days" data-datepicker-total>0</div>
+                    </div>
+                    <div class="detail-sidebar-result__col">
+                        <span>{{ detailSidebarContent.rentAmount }}</span>
+                        <div class="detail-sidebar-total-days">130 000 ₽</div>
+                    </div>
+                    <div class="detail-sidebar-result__col">
+                        <span>{{ detailSidebarContent.deposit }}</span>
+                        <div class="detail-sidebar-total-days">130 000 ₽</div>
+                    </div>
+                </div>
+            </div>
+            
+            {{ button({
+                class: "_full",
+                text: detailSidebarContent.button,
+                href: "/"
+            })}}
+            <div class="detail-sidebar-note hidden-xs">{{ detailSidebarContent.note }}</div>
+        </div>
+    </aside>
+{% endmacro %}

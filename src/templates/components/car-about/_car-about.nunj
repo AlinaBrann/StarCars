@@ -1,0 +1,17 @@
+{% macro aboutCar(props) %}
+    <div class="car-about">
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="car-about__text">
+                    {{ props.item.description }}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4 hidden-xs">
+                <div class="car-about-news">
+                    <img src="media/img/cars/car-1.jpg" alt="">
+                    <div class="car-about-news__text">В 1983 году Mercedes-Benz G-Class под управлением Jacky Ickx и Claude Brasseur выиграл гонку ралли Париж-Дакар.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro%}

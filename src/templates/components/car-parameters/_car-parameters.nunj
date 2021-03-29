@@ -1,0 +1,10 @@
+{% macro parameters(props) %}
+    <ul class="car-parameters{% if props.class %} {{ props.class }}{% endif %}" data-marker-list>
+        {% for item in props.item.parameters %}
+            <li class="car-parameters__item" data-marker-item>
+                <span class="car-parameters__title">{{ item.title }}</span>
+                <span class="car-parameters__value">{{ item.value }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

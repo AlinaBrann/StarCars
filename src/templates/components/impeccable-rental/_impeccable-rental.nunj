@@ -1,7 +1,7 @@
-{% macro impeccableRental(title="", class="") %}
-    <div class="impeccable-rental{% if class %} {{ class }} {% endif %}">
+{% macro impeccableRental(props) %}
+    <div class="impeccable-rental{% if props.class %} {{ props.class }} {% endif %}">
         <div class="impeccable-rental__content">
-            <div class="impeccable-rental__title">{{ title }}</div>
+            <div class="impeccable-rental__title">{{ props.title }}</div>
             <ul class="impeccable-rental-list">
                 {% for item in impeccableRentalContent.list %}
                     <li class="impeccable-rental-list__item">{{ item }}</li>

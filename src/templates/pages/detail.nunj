@@ -1,0 +1,82 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/icon/_icon.nunj" import icon %}
+{% from "../components/card/_card.nunj" import card %}
+{% from "../components/filter/_filter.nunj" import filter %}
+{% from "../components/banner/_banner.nunj" import banner %}
+{% from "../components/impeccable-rental/_impeccable-rental.nunj" import impeccableRental %}
+{% from "../components/car-parameters/_car-parameters.nunj" import parameters %}
+{% from "../components/car-gallery/_car-gallery.nunj" import gallery %}
+{% from "../components/detail-sidebar/_detail-sidebar.nunj" import detailSidebar %}
+{% from "../components/car-about/_car-about.nunj" import aboutCar %}
+{% from "../components/car-rental/_car-rental.nunj" import rental %}
+
+{% block title %}Автопарк / {{ super() }}{% endblock title %}
+
+{% block content %}
+
+	{% include '../components/header/_header.nunj' %}
+    <div class="container page detail">
+        {% for item in cars.slice(0,1)%}
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h1 class="detail__title">{{ item.name }}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    {{ gallery({
+                        item: item
+                    })}}
+                    {{ detailSidebar({
+                        class: "visible-xs _full-width",
+                        item: item
+                    })}}
+                    {{ parameters({
+                        item: item
+                    })}}
+                    {{ aboutCar({ 
+                        item: item
+                    })}}
+                    {{ rental({
+                        item: item
+                    })}}
+                    {{ impeccableRental({
+                        class: "_margin-bottom _bordered-on-mobile",
+						title: impeccableRentalContent.titleShort
+					})}}
+                    
+                </div>
+                <div class="col-xs-12 col-md-4 hidden-xs">
+                    {{ detailSidebar({
+                        item: item
+                    })}}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row hidden-xs">
+            <div class="col-xs-12 col-sm-8 col-md-12">
+                {% include '../components/advantages/_advantages.nunj' %}
+            </div>
+        </div>
+        <section class="cars-sliced">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="cars-sliced__title">Смотрите также</div>
+                </div>
+            </div>
+            <div class="row">
+                {% for car in cars.slice(1, 3)%}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        {{ card({
+                            name: car.name,
+                            item: car
+                        })}}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+	{% include '../components/footer/_footer.nunj' %}
+{% endblock content %}

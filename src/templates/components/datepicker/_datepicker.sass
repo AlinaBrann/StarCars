@@ -1,0 +1,362 @@
+.datepicker
+	display: flex
+	margin-bottom: rem(30px)
+	input
+		display: none
+	&-input
+		display: flex
+		align-items: center
+		&._left
+			border-top-right-radius: 0px
+			border-bottom-right-radius: 0px
+			border-right: 2px solid #0F2733
+		&._right
+			border-top-left-radius: 0px
+			border-bottom-left-radius: 0px
+		&-wrapper
+			flex: auto
+		&__icon
+			margin-left: auto
+			fill: none
+		&__day
+			margin-right: 5px
+.daterangepicker
+	position: absolute
+	color: #FFF
+	background-color: #0F2733
+	width: 278px
+	max-width: none
+	padding: 0
+	top: 100px
+	left: 20px
+	z-index: 3001
+	display: none
+	font-size: 15px
+	+min-screen($screen-sm)
+		width: auto
+		position: absolute
+		margin-top: 7px
+	+max-screen($screen-sm - 1px)
+		position: fixed
+		top: 0 !important
+		left: 0 !important
+		width: 100%
+		height: 100%
+	&:before
+		position: absolute
+		display: block
+		width: 100%
+		top: 43px
+		left: 0
+		border-bottom: 1px solid $grey-dark
+		content: ''
+		+min-screen($screen-sm)
+			top: 35px
+		+min-screen($screen-xlg)
+			top: 45px
+	&.single 
+		.daterangepicker .ranges, 
+		.drp-calendar
+			float: none
+		&.drp-selected
+			display: none
+		.ranges 
+			ul
+				+min-screen($screen-sm)
+					width: 100%
+	&.show-calendar 
+		.drp-calendar
+			display: block
+		.drp-buttons
+			display: block
+	&.auto-apply 
+		.drp-buttons
+			display: none
+			+max-screen($screen-sm - 1)
+				display: block
+	.drp-calendar
+		display: none
+		max-width: 340px
+		+max-screen($screen-sm - 1px)
+			margin: auto
+		&.left
+			padding: 0px 0 11px 11px
+			+max-screen($screen-sm - 1px)
+				padding-right: 11px
+				padding-bottom: 0
+		&.right
+			padding: 0px 11px 0
+		&.single 
+			.calendar-table
+				border: none
+	.calendar-table 
+		border-radius: 4px
+		background-color: #0F2733
+		.next span, 
+		.prev span
+			color: #fff
+			border: solid $blue
+			position: absolute
+			top: 35%
+			border-radius: 0
+			display: inline-block
+			padding: 4px
+			+min-screen($screen-xlg)
+				padding: 5px
+		.next,
+		.prev
+			position: relative
+			&:hover
+				background-color: transparent
+		.next 
+			text-align: right
+			+max-screen($screen-sm - 1px)
+				position: absolute
+				top: 7px
+			span
+				right: 0
+				border-width: 0 4px 4px 0
+				transform: rotate(-45deg) translateY(-50%)
+		.prev 
+			text-align: left
+			+max-screen($screen-sm - 1px)
+				position: absolute
+				top: 7px
+			span
+				left: 0
+				border-width: 0 0 4px 4px 
+				transform: rotate(45deg) translateY(-50%)
+		th, 
+		td
+			white-space: nowrap
+			text-align: center
+			vertical-align: middle
+			+size(30px)
+			line-height: 30px
+			white-space: nowrap
+			cursor: pointer
+			+min-screen($screen-xlg)
+				+size(40px)
+				min-width: 32px
+				line-height: 40px
+			+max-screen($screen-sm)
+			 	+size(32px)
+			
+		table
+			width: 100%
+			margin: 0
+			border-spacing: 4px 
+			border-collapse: separate
+	td,th	
+		&.available
+			&:hover
+				background-color: #D5DFE7
+				border-color: transparent
+				color: inherit
+		&.week
+			color: #989898
+			cursor: default
+	td
+		position: relative
+		background: $grey-dark
+		border-radius: 2px
+		font-size: 12px
+		+min-screen($screen-xlg)
+			border-radius: 4px
+			font-size: 15px
+		&.off, 
+		&.off.in-range, 
+		&.off.start-date,
+		&.off.end-date
+			border-color: transparent
+			color: #989898
+		&.in-range
+			background-color: $brand_color
+			z-index: 1
+			// &:before
+			// 	content: ''
+			// 	display: block
+			// 	+size(180%,100%)
+			// 	position: absolute
+			// 	top: 0
+			// 	left: 50%
+			// 	transform: translateX(-50%)
+			// 	background-color: #DADEFF
+			// 	z-index: -1
+				
+		&.start-date
+			z-index: 2
+		&.end-date
+			&.in-range
+				&:before
+					display: none
+		&.start-date.end-date
+		&.active, 
+		&.active:hover
+			background-color: $blue
+			border-color: transparent
+			color: #fff
+		&.disabled
+			color: #999
+			background-color: $grey
+			cursor: not-allowed
+			text-decoration: line-through
+		&:last-of-type
+			&:before
+				width: 100%
+				right: 0
+				left: auto
+				transform: none
+				border-radius: 0 14px 14px 0
+		&:first-of-type
+			&:before
+				width: 100%
+				border-radius: 14px 0 0 14px
+	th
+		font-size: 12px
+		color: #989898
+		&.month
+			color: $brand_color
+			font-size: 12px
+			width: auto
+			text-transform: capitalize
+			+min-screen($screen-xlg)
+				font-size: 15px
+	.drp-buttons
+		clear: both
+		max-width: 310px
+		margin: 20px auto 0
+		text-align: right
+		display: none
+		line-height: 12px
+		vertical-align: middle
+		.btn
+			margin-left: 8px
+			font-size: 12px
+			font-weight: bold
+			padding: 4px 8px
+			&.cancelBtn
+				width: 100%
+				height: 40px
+				background: none
+				font-family: "Din-Bold"
+				font-size: 14px
+				margin: 0
+				border: 1px solid #A5A8B7
+				border-radius: 3px	
+	.drp-selected
+		display: inline-block
+		font-size: 12px
+		padding-right: 8px
+		+max-screen($screen-sm - 1px)
+			display: none
+	
+	.applyBtn
+		+max-screen($screen-sm - 1px)
+			display: none
+	&.show-ranges
+		&.single
+			&.rtl 
+				.drp-calendar
+					&.left
+  						border-right: 1px solid #ddd
+					&.right
+						border-right: 1px solid #ddd	
+			&.ltr 
+				.drp-calendar.left
+					border-left: 1px solid #ddd
+
+		&.ltr 
+			.drp-calendar.left
+				border-left: 1px solid #ddd
+	.ranges
+		float: none
+		text-align: left
+		margin: 0
+		ul
+			list-style: none
+			margin: 0 auto
+			padding: 0
+			width: 100%
+			+min-screen($screen-sm)
+				width: 140px
+		li
+			font-size: 12px
+			padding: 8px 12px
+			cursor: pointer
+			
+			&:hover
+				background-color: #eee
+			&.active
+				background-color: #08c
+				color: #fff
+	&.show-calendar 
+		.ranges
+			margin-top: 8px
+			+max-screen($screen-sm - 1px)
+				margin-top: 0
+
+
+/*  Larger Screen Styling */
+@media (min-width: 564px)
+	.daterangepicker
+		width: auto
+
+	.daterangepicker .ranges ul
+		width: 140px
+
+	.daterangepicker.single .ranges ul
+		width: 100%
+
+	.daterangepicker.single .drp-calendar.left
+		clear: none
+
+	.daterangepicker.single .ranges, .daterangepicker.single .drp-calendar
+		float: left
+
+	.daterangepicker
+		direction: ltr
+		text-align: left
+
+
+	.daterangepicker .drp-calendar.left
+		clear: left
+		margin-right: 0
+
+
+	.daterangepicker .drp-calendar.left .calendar-table
+		border-right: none
+		border-top-right-radius: 0
+		border-bottom-right-radius: 0
+
+	.daterangepicker .drp-calendar.right
+		margin-left: 0
+
+	.daterangepicker .drp-calendar.right .calendar-table
+		border-left: none
+		border-top-left-radius: 0
+		border-bottom-left-radius: 0
+
+	.daterangepicker .drp-calendar.left .calendar-table
+		padding-right: 8px
+
+	.daterangepicker .ranges, .daterangepicker .drp-calendar
+		float: left
+
+
+
+@media (min-width: 730px)
+	.daterangepicker .ranges
+		width: auto
+
+	.daterangepicker .ranges
+		float: left
+
+
+	.daterangepicker.rtl .ranges
+		float: right
+
+	.daterangepicker .drp-calendar.left
+		clear: none !important
+
+

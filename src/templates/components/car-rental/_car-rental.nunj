@@ -1,0 +1,28 @@
+{% macro rental(props) %}
+    <div class="car-rental hidden-xs">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="car-rental__title">{{ carRental.title }}</div>
+                <div class="flex car-rental-row">    
+                    <div class="car-rental-col">
+                        <div class="car-rental-col__title">{{ carRental.byDays }}</div>
+                        <ul class="car-rental-price-list">
+                            {% for price in props.item.priceDetail %}
+                                <li class="car-rental-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="car-rental-col">
+                        <div class="car-rental-col__title">{{ carRental.promotions }}</div>
+                        <ul class="car-rental-price-list">
+                            {% for price in props.item.promotions %}
+                                <li class="car-rental-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="car-rental-deposit">{{ carRental.deposit }} <span>{{ props.item.deposit }}</span></div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

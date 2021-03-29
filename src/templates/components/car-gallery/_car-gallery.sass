@@ -1,0 +1,32 @@
+.car-gallery
+    margin-bottom: 12px
+    +min-screen($screen-md)
+        margin-bottom: rem(50px)
+    &-slider
+        width: 100%
+        margin-bottom: rem(10px)
+    &-previews
+        margin: 0 rem(-5px)
+        &__slide
+            padding: 0 5px
+            height: rem(100px)
+            cursor: pointer
+    &-slide
+        &__img
+            +size(100%)
+            object-fit: cover
+    &-dots
+        $parent: &
+        display: flex
+        align-items: center
+        justify-content: center
+        &__item
+            display: block
+            +size(6px)
+            margin: 0 2px
+            background: transparentize(#FFF, .7)
+            transform: scale(0.6)
+            border-radius: 50%
+            &._active
+                background: #FFF
+                transform: scale(1)

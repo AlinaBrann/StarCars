@@ -141,6 +141,9 @@
 	"home": {
 		"filterTitle": "Выбор автомобиля"
 	},
+	"catalog": {
+		"filterTitle": "Наш автопарк"
+	},
 	"intro": {
 		"title": "Аренда премиальных <br>авто в Москве",
 		"button": "Забротировать",
@@ -227,9 +230,37 @@
 		{
 			"name": "Lamborghini Urus",
 			"price": "75 000 ₽",
+			"priceDetail": [
+				{
+					"title": "1 сутки",
+					"value": "65 000 ₽"
+				},
+				{
+					"title": "2-7 суток",
+					"value": "52 000 ₽/день"
+				},
+				{
+					"title": "8 и более",
+					"value": "50 000 ₽/день"
+				}
+			],
+			"promotions": [
+				{
+					"title": "Ночь (с 20 до 08)",
+					"value": "30 000 ₽"
+				},
+				{
+					"title": "Утро (с 8 до 12)",
+					"value": "15 000 ₽"
+				}
+			],
 			"img": "car-1.jpg",
+			"description": "В Mercedes-AMG G 63 соединены невероятная спортивная мощь двигателя V8 с двойным турбонаддувом, бьющая рекорды ходовая часть и новое прочтение легендарного дизайна. Просторный салон, обивка сидений из кожи наппа, функциональное рулевое колесо и карбоновые элементы обеспечивают высочайший уровень комфорта при вождении.",
 			"new": true,
 			"forWinter": true,
+			"deposit": "150 000 ₽",
+			"type": "business",
+			"brand": "lamborghini",
 			"parameters": [
 				{
 					"title": "Привод",
@@ -242,7 +273,26 @@
 				{
 					"title": "Мощность",
 					"value": "585 л.с."
+				},
+				{
+					"title": "Объем двигателя",
+					"value": "4,0 л"
+				},
+				{
+					"title": "Год выпуска",
+					"value": "2020"
+				},
+				{
+					"title": "Топливо",
+					"value": "Бензин"
 				}
+			],
+			"gallery": [
+				"car-1.jpg",
+				"car-2.jpg",
+				"car-3.jpg",
+				"car-4.jpg",
+				"car-5.jpg"
 			]
 		},
 		{
@@ -251,6 +301,8 @@
 			"img": "car-2.jpg",
 			"new": false,
 			"forWinter": true,
+			"type": "premium",
+			"brand": "mercedes",
 			"parameters": [
 				{
 					"title": "Привод",
@@ -272,6 +324,8 @@
 			"img": "car-3.jpg",
 			"new": true,
 			"forWinter": true,
+			"type": "sports-cars",
+			"brand": "rolls-royce",
 			"parameters": [
 				{
 					"title": "Привод",
@@ -293,6 +347,8 @@
 			"img": "car-4.jpg",
 			"new": true,
 			"forWinter": true,
+			"type": "suv",
+			"brand": "bmw",
 			"parameters": [
 				{
 					"title": "Привод",
@@ -314,6 +370,8 @@
 			"img": "car-5.jpg",
 			"new": true,
 			"forWinter": true,
+			"type": "suv",
+			"brand": "porsche",
 			"parameters": [
 				{
 					"title": "Привод",
@@ -363,6 +421,7 @@
 	},
 	"impeccableRentalContent": {
 		"title": "Безупречная аренда в&nbsp;StarCars",
+		"titleShort": "Безупречная аренда",
 		"list": [
 			"Доставим и заберем автомобиль в любое время в любом месте Москвы.",
 			"Не нужно мыть или заправлять перед возвратом",
@@ -376,5 +435,19 @@
 		"text": "Новый автомобиль появляется у нас примерно раз в месяц. Подпишитесь на уведомления, мы сообщим о новинке.",
 		"label": "Номер телефона или эл. почта",
 		"button": "Подписаться на новости"
+	},
+	"detailSidebarContent": {
+		"title": "Укажите даты, чтобы узнать полную стоимость",
+		"duration": "Длительность",
+		"rentAmount": "Сумма аренды",
+		"deposit": "Депозит",
+		"button": "Перейти к заявке",
+		"note": "Объясним, проконсультируем <br>и&nbsp;поможем с&nbsp;выбором"
+	},
+	"carRental": {
+		"title": "Стоимость аренды",
+		"byDays": "По дням",
+		"promotions": "Акции",
+		"deposit": "Обязательный залог"
 	}
 }

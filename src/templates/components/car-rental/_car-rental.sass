@@ -1,0 +1,41 @@
+.car-rental
+    margin-bottom: rem(113px)
+    &__title
+        margin-bottom: rem(31px)
+        font-size: rem(48px)
+    &-row
+        margin-bottom: rem(24px)
+        border-bottom: 1px solid transparentize($brand_color, .7)
+    &-col
+        flex: auto
+        margin-bottom: rem(25px)
+        &:first-of-type
+            margin-right: rem(35px)
+        &__title
+            margin-bottom: rem(24px)
+            font-size: rem(24px)
+    &-price-list
+        display: flex
+        &__item
+            display: flex
+            flex-direction: column
+            flex: 1 1 0
+            color: $brand_color
+            font-size: rem(16px)
+            white-space: nowrap
+            &:not(:last-of-type)
+                padding-right: rem(24px)
+                border-right: 1px solid transparentize($brand_color, .7)
+            &:not(:first-of-type)
+                padding-left: rem(24px)
+            span
+                color: #FFF
+                font-size: rem(24px)
+    &-deposit
+        font-size: rem(24px)
+        color: $brand_color
+        span
+            color: #FFF
+
+    
+    

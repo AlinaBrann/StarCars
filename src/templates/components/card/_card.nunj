@@ -1,5 +1,7 @@
+{% from "../car-parameters/_car-parameters.nunj" import parameters %}
+
 {% macro card(props) %}
-    <div class="card">
+    <div class="card" data-brand="{{ props.item.brand }}" data-type="{{ props.item.type }}" >
         <a href="/">
             <div class="card__stickers">
                 {% if props.item.new %}
@@ -11,14 +13,11 @@
             </div>
             <div class="card__img-wrapper proportional-height">
                 <img src="media/img/cars/{{ props.item.img }}" alt="{{ props.item.name }}" class="card__img">
-                <ul class="card-parameters">
-                    {% for item in props.item.parameters %}
-                        <li class="card-parameters__item">
-                            <span class="card-parameters__title">{{ item.title }}</span>
-                            <span class="card-parameters__value">{{ item.value }}</span>
-                        </li>
-                    {% endfor %}
-                </ul>
+                {{ parameters({
+                    item: props.item,
+                    class: "_hidden"
+                })}}
+                
             </div>
             <div class="card__info">
                 <div class="card__title{% if props.item.name.length > 60 %} _small{% endif %}">{{ props.item.name }}</div>

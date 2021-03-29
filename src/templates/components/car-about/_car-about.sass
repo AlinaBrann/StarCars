@@ -1,0 +1,22 @@
+.car-about
+    margin-bottom: 30px
+    +min-screen($screen-sm)
+        margin-bottom: rem(50px)
+    +min-screen($screen-md)
+        margin: rem(80px) rem(0px) rem(70px)
+    &__text
+        font-size: 16px
+        line-height: 24px
+        +min-screen($screen-sm)
+            font-size: rem(18px)
+            line-height: rem(28px)
+        +min-screen($screen-md)
+            font-size: rem(24px)
+            line-height: rem(36px)
+    &-news
+        padding: rem(20px)
+        background: transparentize(#FFF, .95)
+        &__text
+            margin-top: rem(18px)
+            font-size: rem(18px)
+            line-height: 1.4
