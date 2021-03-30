@@ -1,11 +1,16 @@
 import { TweenMax } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { gsap } from "gsap";
+
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 global.TweenMax = TweenMax;
 global.$ = global.jQuery = require("jquery");
 global.Draggable = Draggable;
 require("./utils/jqExtensions");
 require("slick-carousel");
 require("daterangepicker");
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 // prettier-ignore
 global.ProjectName = new function StarCars() { // eslint-disable-line
@@ -22,6 +27,7 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 		Select: require('./modules/Select'),
 		Popups: require('./modules/Popups'),
 		Inputs: require('./modules/Inputs'),
+		Animations: require('./modules/Animations'),
 		Tabs: require('./modules/Tabs'),
 		SlickSliders: require('./modules/SlickSliders'),
 		Datepicker: require('./modules/Datepicker'),

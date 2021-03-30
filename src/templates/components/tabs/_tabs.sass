@@ -1,0 +1,108 @@
+.tabs
+	&-nav
+		display: flex
+		justify-content: center
+		margin-bottom: 24px
+		+min-screen($screen-md)
+			margin-bottom: 0
+		&__item
+			position: relative
+			padding-bottom: 6px
+			font-size: 36px
+			color: $brand_color
+			@extend .transition
+			cursor: pointer
+			+min-screen($screen-md)
+				padding-bottom: rem(12px)
+				font-size: rem(48px)
+			&:before
+				+b
+				bottom: 0
+				width: 0
+				height: 2px
+				background: #194FDB
+				box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+				transition: width .5s
+			&:not(:last-of-type)
+				margin-right: rem(40px)
+				&:after
+					+b
+					+size(6px)
+					top: 55%
+					right: rem(-23px)
+					border-radius: 50%
+					background: transparentize(#FFF, .8)
+			&._active-tab
+				color: #FFF
+				&:before
+					width: 100%
+			&:hover
+				color: #FFF
+	&-content
+		display: none
+		&._active-tab
+			display: block
+		&__inner
+			display: flex
+			flex-direction: column
+			align-items: center
+		&__blue-text
+			align-self: flex-end
+			fill: none
+		&__phone
+			margin-bottom: 30px
+			font-size: 36px
+			line-height: 39.6px
+			+min-screen($screen-md)
+				margin-bottom: rem(30px)
+				font-size: rem(120px)
+				line-height: rem(132px)
+		&-communication
+			$parent: &
+			display: flex
+			flex-direction: column
+			margin-bottom: 32px
+			+min-screen($screen-md)
+				width: 70%
+				flex-direction: row
+				align-items: center
+				justify-content: space-between
+				margin-bottom: rem(80px)
+			&__item
+				margin-bottom: 16px
+				+min-screen($screen-md)
+					margin-bottom: 0
+			&__link
+				display: flex
+				align-items: center
+				font-size: 18px
+				color: $brand_color
+				@extend .transition
+				+min-screen($screen-md)
+					font-size: rem(24px)
+				&:hover
+					color: #FFF
+					#{$parent}
+						&__icon
+							fill: #FFF
+			&__icon
+				margin-right: rem(20px)
+				fill: $brand_color
+				@extend .transition
+		&__small-title
+			margin-bottom: rem(21px)
+			font-size: rem(16px)
+			color: $brand_color
+			text-align: center
+		&__address
+			margin-bottom: 24px
+			font-size: 24px
+			text-align: center
+			cursor: pointer
+			+min-screen($screen-md)
+				margin-bottom: rem(56px)
+				font-size: rem(24px)
+		&__social
+			margin-bottom: 60px
+			+min-screen($screen-md)
+				margin-bottom: rem(156px)

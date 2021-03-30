@@ -1,0 +1,23 @@
+<div class="rent-conditions">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <ul class="rent-conditions-list">
+                {% for item in rent.conditions %}
+                    <li class="rent-conditions-list__item">
+                        <small>{{ item.title }}</small>
+                        {% if item.value %}
+                        <div class="rent-conditions-list__text">{{ item.value }}</div>
+                        {% endif %}
+                        {% if item.list %}
+                            <ul class="rent-conditions-list-child">
+                                {% for list in item.list %}
+                                    <li class="rent-conditions-list-child__item">{{ list }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

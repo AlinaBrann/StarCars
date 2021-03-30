@@ -1,0 +1,50 @@
+.rent-conditions
+    margin-bottom: 32px
+    +min-screen($screen-md)
+        margin-bottom: rem(64px)
+    &-list
+        display: flex
+        align-items: center
+        justify-content: space-between
+        text-align: center
+        +min-screen($screen-md)
+            justify-content: center
+        &__item
+            &:not(:last-of-type)
+                margin-right: 10px
+                +min-screen($screen-md)
+                    margin-right: rem(53px)
+            small
+                display: block
+                margin-bottom: 5px
+                color: $brand_color
+                font-size: 15px
+                +min-screen($screen-md)
+                    margin-bottom: rem(12px)
+                    font-size: rem(16px)
+        &__text
+            font-size: 20px
+            +min-screen($screen-md)
+                font-size: rem(24px)
+        &-child
+            display: flex
+            font-size: 20px
+            +min-screen($screen-md)
+                font-size: rem(24px)
+            &__item
+                position: relative
+                &:not(:last-of-type)
+                    margin-right: 14px
+                    &:after
+                        +b
+                        +size(3px)
+                        top: 55%
+                        right: -8px
+                        border-radius: 50%
+                        background: #FFF
+                    +min-screen($screen-md)
+                        margin-right: rem(32px)
+                        &:after
+                            +size(4px)
+                            right: rem(-18px)
+        

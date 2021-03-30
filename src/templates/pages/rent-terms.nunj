@@ -4,16 +4,17 @@
 {% from "../components/icon/_icon.nunj" import icon %}
 {% from "../components/card/_card.nunj" import card %}
 
-{% block title %}Тарифы / {{ super() }}{% endblock title %}
+{% block title %}{{ rent.title }} / {{ super() }}{% endblock title %}
 
 {% block content %}
 
 	{% include '../components/header/_header.nunj' %}
     <div class="container page">
             <div class="row">
-                <div class="col-xs-12 col-md-12">
-                    <h1 class="page__title">{{ rates.title }}</h1>
-                    {% include '../components/rates-table/_rates-table.nunj' %}
+                <div class="col-xs-12 col-md-10 offset-md-1">
+                    <h1 class="page__title">{{ rent.title }}</h1>
+                    {% include '../components/rent-conditions/_rent-conditions.nunj' %}
+                    {% include '../components/rent-terms-content/_rent-terms-content.nunj' %}
                 </div>
             </div>
         <div class="row hidden-xs">

@@ -1,0 +1,57 @@
+<div class="tabs" data-tabs>
+    <ul class="tabs-nav">
+        {% for item in contacts %}
+            {% if contacts.length === 1 %}
+                <h1 class="page__title">{{ item.title }}</h1>
+            {% else %}
+            <li class="tabs-nav__item{% if item.active === true %} _active-tab{% endif %}" data-tab-opener="{{ item.value }}">{{ item.title }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="tabs-wrapper">
+        {% for item in contacts %}
+            <div class="tabs-content {% if item.active === true %} _active-tab{% endif %}" data-tab="{{ item.value }}">
+                <div class="tabs-content__inner">
+                    <div class="tabs-content__blue-text hidden-xs">
+                        {{ icon({
+                            name: "blue-text",
+                            width: "220",
+                            height: "125"
+                        })}}
+                    </div>
+                    <a href="tel:{{ item.phone }}" class="tabs-content__phone">{{ item.phone }}</a>
+                    {% if item.communication %}
+                    <ul class="tabs-content-communication">
+                        {% for soc in item.communication %}
+                            <li class="tabs-content-communication__item">
+                                <a href="{{ soc.link }}" class="tabs-content-communication__link">
+                                    {{ icon({
+                                        class: "tabs-content-communication__icon",
+                                        name: soc.icon,
+                                        width: "24",
+                                        height: "24"
+                                    })}}
+                                    {{ soc.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if item.address %}
+                    <div class="tabs-content__address">
+                        <div class="tabs-content__small-title">Адрес офиса</div>
+                        <span data-anchor="map">{{ item.address }}</span>
+                    </div>
+                    {% endif %}
+                    <div class="tabs-content__social">
+                        <div class="tabs-content__small-title">Мы в соцсетях</div>
+                        {% include '../social/_social.nunj' %}
+                    </div>
+                    {% if item.map %}
+                    <iframe id="map" src="{{ item.map }}" class="hidden-xs" width="100%" height="576" frameborder="0"></iframe>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

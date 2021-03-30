@@ -1,0 +1,30 @@
+<div class="rent-terms">
+    <div class="row">
+        <div class="col-xs-12 col-md-4 hidden-xs">
+            <ul class="rent-terms-nav">
+                {% for item in rentTerms %}
+                    <li class="rent-terms-nav__item" data-anchor="{{ item.anchor }}">{{ item.title }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <div class="rent-terms-content">
+                {% for item in rentTerms %}
+                    <div class="rent-terms-content__block" data-section id="{{ item.anchor }}">
+                        <div class="rent-terms-content__title">{{ item.title }}</div>
+                        {% if item.list %}
+                            <ul class="rent-terms-content-list">
+                                {% for list in item.list %}
+                                    <li class="rent-terms-content-list__item">{{ loop.index }}. {{ list }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {% if item.text %}
+                            <div class="rent-terms-content__text">{{ item.text }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

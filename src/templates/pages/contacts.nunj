@@ -1,0 +1,22 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/icon/_icon.nunj" import icon %}
+{% from "../components/card/_card.nunj" import card %}
+
+{% block title %}Контакты / {{ super() }}{% endblock title %}
+
+{% block content %}
+
+{% include '../components/header/_header.nunj' %}
+<div class="container page">
+	<div class="row">
+		<div class="col-xs-12 col-md-12">
+            {% include '../components/tabs/_tabs.nunj' %}
+
+		</div>
+	</div>
+
+</div>
+{% include '../components/footer/_footer.nunj' %}
+{% endblock content %}
