@@ -1,0 +1,43 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/icon/_icon.nunj" import icon %}
+{% from "../components/card/_card.nunj" import card %}
+
+{% block title %}Тарифы / {{ super() }}{% endblock title %}
+
+{% block content %}
+
+	{% include '../components/header/_header.nunj' %}
+    <div class="container page">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <h1 class="page__title">{{ rates.title }}</h1>
+                    {% include '../components/rates-table/_rates-table.nunj' %}
+                </div>
+            </div>
+        <div class="row hidden-xs">
+            <div class="col-xs-12 col-md-12">
+                {% include '../components/advantages/_advantages.nunj' %}
+            </div>
+        </div>
+        <section class="cars-sliced">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="cars-sliced__title">Смотрите также</div>
+                </div>
+            </div>
+            <div class="row">
+                {% for car in cars.slice(1, 3)%}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        {{ card({
+                            name: car.name,
+                            item: car
+                        })}}
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+	{% include '../components/footer/_footer.nunj' %}
+{% endblock content %}

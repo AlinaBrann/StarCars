@@ -1,0 +1,82 @@
+.rates-table
+    width: 100%
+    margin-bottom: rem(182px)
+    &-mobile
+        display: block
+        +min-screen($screen-md)
+            display: none
+    &-head
+        align-items: flex-start
+        padding-bottom: 20px
+        color: $brand_color
+        border-bottom: 1px solid transparentize(#C4C4C4, .8)
+        &__title
+            display: block
+            margin-bottom: rem(16px)
+            font-size: rem(24px)
+    &-block
+        margin: 36px 0 12px
+    &-row
+        display: flex
+        justify-content: space-between
+        width: 100%
+        &._padding
+            padding: rem(52px) 0 rem(12px)
+        &._margin-bottom
+            margin-bottom: 10px
+    &-col
+        flex: 0 0 49%
+        +max-screen($screen-md)
+            &:first-of-type
+        +min-screen($screen-md)
+            flex: 0 0 15%
+            &:first-of-type
+                margin-right: rem(40px)
+        &._big
+            flex: 0 0 55%
+    &__title
+        margin-bottom: 18px
+        font-size: 24px
+        color: $brand_color
+        line-height: 1
+        +min-screen($screen-md)
+            margin-bottom: rem(13px)
+            font-size: rem(64px)
+            color: transparentize($brand_color, .8)
+    &-subcol
+        flex: 0 0 33%
+        +max-screen($screen-md)
+            &:first-of-type
+                flex: 0 0 40%
+            &:last-of-type
+                flex: 0 0 60%
+        &._with-line
+            display: flex
+            align-items: center
+            font-size: rem(16px)
+            &:not(:last-of-type)
+                &:after
+                    content: ''
+                    display: block
+                    height: 1px
+                    flex: auto
+                    margin: 0 rem(7px)
+                    background: transparentize(#2C424B, .8)
+    &__text
+        font-size: 15px
+        +min-screen($screen-md)
+            font-size: rem(24px)
+        &._big
+            font-size: 28px
+            line-height: 30px
+            +min-screen($screen-md)
+                font-size: rem(36px)
+                line-height: 1.1
+        &._blue
+            color: #2AA7C0
+        &._grey
+            color: $brand_color
+    &__img
+        +max-screen($screen-md)
+            +size(100%)
+            object-fit: cover

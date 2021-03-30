@@ -3,8 +3,6 @@
 {% from "../components/button/_button.nunj" import button %}
 {% from "../components/icon/_icon.nunj" import icon %}
 {% from "../components/card/_card.nunj" import card %}
-{% from "../components/filter/_filter.nunj" import filter %}
-{% from "../components/banner/_banner.nunj" import banner %}
 {% from "../components/impeccable-rental/_impeccable-rental.nunj" import impeccableRental %}
 {% from "../components/car-parameters/_car-parameters.nunj" import parameters %}
 {% from "../components/car-gallery/_car-gallery.nunj" import gallery %}
@@ -17,11 +15,11 @@
 {% block content %}
 
 	{% include '../components/header/_header.nunj' %}
-    <div class="container page detail">
+    <div class="container page">
         {% for item in cars.slice(0,1)%}
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1 class="detail__title">{{ item.name }}</h1>
+                    <h1 class="page__title">{{ item.name }}</h1>
                 </div>
             </div>
             <div class="row">
@@ -56,7 +54,7 @@
             </div>
         {% endfor %}
         <div class="row hidden-xs">
-            <div class="col-xs-12 col-sm-8 col-md-12">
+            <div class="col-xs-12 col-md-12">
                 {% include '../components/advantages/_advantages.nunj' %}
             </div>
         </div>

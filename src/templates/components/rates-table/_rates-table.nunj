@@ -1,0 +1,105 @@
+<div class="rates-table hidden-xs">
+    <div class="rates-table-row rates-table-head ">
+        <div class="rates-table-col rates-table-head__col">
+            <div class="rates-table-head__title">Автомобиль</div>
+        </div>
+        <div class="rates-table-col rates-table-head__col _big">
+            <div class="rates-table-head__title">Посуточная цена</div>
+            <div class="rates-table-row">
+                <div class="rates-table-subcol _with-line">За сутки</div>
+                <div class="rates-table-subcol _with-line">2-7 суток</div>
+                <div class="rates-table-subcol _with-line">8 и более суток</div>
+            </div>
+        </div>
+        <div class="rates-table-col rates-table-head__col">
+            <div class="rates-table-head__title">За ночь</div>
+            <span>с 20:00 до 08:00 </span>
+        </div>
+        <div class="rates-table-col rates-table-head__col">
+            <div class="rates-table-head__title">Депозит</div>
+        </div>
+    </div>
+    {% for item in rates.table %}
+        <div class="rates-table-row _aife _padding">
+            <div class="rates-table-col">
+                <img src="media/img/{{ item.img }}" alt="" class="rates-table__img">
+            </div>
+            <div class="rates-table-col _big">
+                <div class="rates-table__title">{{ item.title }}</div>
+                <div class="rates-table-row _aife">
+                    <div class="rates-table-subcol">
+                        <div class="rates-table__text _big">{{ item.1day }}</div>
+                    </div>
+                    <div class="rates-table-subcol">
+                        <div class="rates-table__text">{{ item.2to7days }}</div>
+                    </div>
+                    <div class="rates-table-subcol">
+                        <div class="rates-table__text">{{ item.8andMoreDays }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="rates-table-col">
+                <div class="rates-table__text _blue">{{ item.forNigth }}</div>
+            </div>
+            <div class="rates-table-col">
+                <div class="rates-table__text">{{ item.deposit }}</div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="rates-table rates-table-mobile">
+    {% for item in rates.table %}
+        <div class="rates-table-block _aife _padding">
+            <div class="rates-table-row">
+                <div class="rates-table__title">{{ item.title }}</div>           
+            </div>
+            <div class="rates-table-row _aistr">
+                <div class="rates-table-col">     
+                    <div class="rates-table-row">
+                        <div class="rates-table__text _grey">Цена за 1 сутки</div>
+                    </div>
+                    <div class="rates-table-row _margin-bottom">
+                        <div class="rates-table__text _big">{{ item.1day }}</div>
+                    </div>
+                    <div class="rates-table-row _margin-bottom">
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text _grey">2-7 суток</div>
+                        </div>
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text">{{ item.2to7days }}</div>
+                        </div>
+                    </div>
+                    <div class="rates-table-row _margin-bottom">
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text _grey">8 и более</div>
+                        </div>
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text">{{ item.8andMoreDays }}</div>
+                        </div>
+                    </div>
+                    <div class="rates-table-row _margin-bottom">
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text _grey">За ночь</div>
+                        </div>
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text _grey">{{ item.forNigth }}</div>
+                        </div>
+                    </div>
+                    <div class="rates-table-row">
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text _grey">Депозит</div>
+                        </div>
+                        <div class="rates-table-subcol">
+                            <div class="rates-table__text">{{ item.deposit }}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rates-table-col">
+                    <img src="media/img/{{ item.img }}" alt="" class="rates-table__img">
+                </div>
+            </div>
+            
+        </div>
+    {% endfor %}
+</div>

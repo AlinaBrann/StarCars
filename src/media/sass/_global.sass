@@ -142,6 +142,9 @@ body
 ._aife
 	align-items: flex-end
 
+._aistr
+	align-items: stretch
+
 ._full-width
 	width: 100%
 
@@ -201,3 +204,14 @@ body
 			font-size: rem(48px)
 			line-height: rem(72px)
 			margin-bottom: rem(48px)
+
+.page
+    &__title
+        margin-bottom: 24px
+        text-align: center
+        font-size: 36px
+        line-height: rem(39.6px)
+        +min-screen($screen-lg)
+            margin-bottom: rem(48px)
+            font-size: rem(56px)
+            line-height: rem(67px)

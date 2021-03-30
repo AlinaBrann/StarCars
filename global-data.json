@@ -449,5 +449,73 @@
 		"byDays": "По дням",
 		"promotions": "Акции",
 		"deposit": "Обязательный залог"
+	},
+	"rates": {
+		"title": "Тарифы",
+		"table": [
+			{
+				"title": "Lamborghini Urus",
+				"img": "cars/car-1.jpg",
+				"1day": "565 500 ₽",
+				"2to7days": "558 000 ₽/день",
+				"8andMoreDays": "550 000 ₽/день",
+				"forNigth": "530 000 ₽",
+				"deposit": "200 000 ₽"
+			},
+			{
+				"title": "Mercedes-Benz G63 AMG",
+				"img": "cars/car-2.jpg",
+				"1day": "65 500 ₽",
+				"2to7days": "58 000 ₽/день",
+				"8andMoreDays": "50 000 ₽/день",
+				"forNigth": "30 000 ₽",
+				"deposit": "100 000 ₽"
+			},
+			{
+				"title": "Porsche 911 Turbo S",
+				"img": "cars/car-3.jpg",
+				"1day": "565 500 ₽",
+				"2to7days": "558 000 ₽/день",
+				"8andMoreDays": "550 000 ₽/день",
+				"forNigth": "530 000 ₽",
+				"deposit": "200 000 ₽"
+			},
+			{
+				"title": "Lamborghini Urus",
+				"img": "cars/car-1.jpg",
+				"1day": "565 500 ₽",
+				"2to7days": "558 000 ₽/день",
+				"8andMoreDays": "550 000 ₽/день",
+				"forNigth": "530 000 ₽",
+				"deposit": "200 000 ₽"
+			},
+			{
+				"title": "Mercedes-Benz G63 AMG",
+				"img": "cars/car-2.jpg",
+				"1day": "65 500 ₽",
+				"2to7days": "58 000 ₽/день",
+				"8andMoreDays": "50 000 ₽/день",
+				"forNigth": "30 000 ₽",
+				"deposit": "100 000 ₽"
+			},
+			{
+				"title": "Porsche 911 Turbo S",
+				"img": "cars/car-3.jpg",
+				"1day": "565 500 ₽",
+				"2to7days": "558 000 ₽/день",
+				"8andMoreDays": "550 000 ₽/день",
+				"forNigth": "530 000 ₽",
+				"deposit": "200 000 ₽"
+			},
+			{
+				"title": "Porsche 911 Turbo S",
+				"img": "cars/car-3.jpg",
+				"1day": "565 500 ₽",
+				"2to7days": "558 000 ₽/день",
+				"8andMoreDays": "550 000 ₽/день",
+				"forNigth": "530 000 ₽",
+				"deposit": "200 000 ₽"
+			}
+		]
 	}
 }
