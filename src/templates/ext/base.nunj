@@ -18,10 +18,12 @@
 		<div class="wrapper">
 			{% block content %}
 			{% endblock content %}
+			{% include '../components/popups/_popups.nunj' %}
 		</div>
 
 		{% block scripts %}
 			<script src="media/js/bundle.js?hash"></script>
 		{% endblock scripts %}
+		
 	</body>
 </html>

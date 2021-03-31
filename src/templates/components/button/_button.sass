@@ -10,7 +10,9 @@
     color: #FFF
     line-height: 1
     border-radius: 4px
+    @extend .transition
     border: none
+    cursor: pointer
     +min-screen($screen-lg)
         width: rem(260px)
         height: rem(52px)
@@ -19,3 +21,14 @@
         width: 100%
     &._dark-blue
         background: $blue_dark
+    &._border
+        width: auto
+        height: 48px
+        padding: 0 16px 2px
+        font-size: rem(18px)
+        background: transparent
+        border: 1px solid #355E69
+        border-radius: rem(30px)
+        &:hover,
+        &._active
+            background: transparentize(#02090D, .7)

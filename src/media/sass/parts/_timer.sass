@@ -1,0 +1,42 @@
+.base-timer 
+	position: relative
+	+size(rem(200px))
+	margin: auto
+	&__svg
+		transform: scaleX(-1)
+	&__circle
+		fill: none
+		stroke: none
+	&__path-elapsed
+		stroke-width: 2px
+		stroke: rgba(150, 184, 191, 0.05)
+	&__path-remaining
+		stroke-width: 2px
+		transform: rotate(90deg)
+		transform-origin: center
+		transition: 1s linear all
+		fill-rule: nonzero
+		stroke: currentColor
+
+
+	&__path-remaining.blue
+		color: $blue
+
+
+	&__path-remaining.orange
+		color: #FFA384
+
+
+	&__path-remaining.red
+		color: #F85C70
+
+
+	&__label
+		position: absolute
+		+size(100%)
+		top: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: rem(36px)
+		color: $brand_color

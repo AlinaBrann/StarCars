@@ -39,7 +39,7 @@
             {{ button({
                 class: "_full",
                 text: detailSidebarContent.button,
-                href: "/"
+                attr: "data-popup-opener='request-auto'"
             })}}
             <div class="detail-sidebar-note hidden-xs">{{ detailSidebarContent.note }}</div>
         </div>

@@ -49,7 +49,6 @@ $(".datepicker").daterangepicker(
 	function(start, end, label) {
 		var a = new Date(start);
 		var b = new Date(end);
-
 		$('input[name="datefilter-start"]').val(start.format("MM/DD/YYYY"));
 		$('input[name="datefilter-end"]').val(end.format("MM/DD/YYYY"));
 		let days = $(".in-range");
@@ -63,3 +62,27 @@ $(".datepicker").daterangepicker(
 		$endMonth.text($ru.monthNames[b.getMonth()]);
 	}
 );
+$start.on("click", function() {
+	$(this)
+		.parents(".popup-form")
+		.removeClass("_empty");
+});
+$end.on("click", function() {
+	$(this)
+		.parents(".popup-form")
+		.removeClass("_empty");
+});
+$(".clear-datepicker").on("click", function() {
+	let parent = $(this).parents(".popup");
+	parent.find(".popup-form").addClass("_empty");
+	parent.find(".datepicker-start").val();
+	parent
+		.parents(".popup")
+		.find(".datepicker-end")
+		.val();
+	parent.find($startDay).text("");
+	parent.find($startMonth).text("Не важно");
+
+	parent.find($endDay).text("");
+	parent.find($endMonth).text("Не важно");
+});

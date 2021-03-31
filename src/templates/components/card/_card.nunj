@@ -2,7 +2,7 @@
 
 {% macro card(props) %}
     <div class="card" data-brand="{{ props.item.brand }}" data-type="{{ props.item.type }}" >
-        <a href="/">
+        <a href="/detail.html">
             <div class="card__stickers">
                 {% if props.item.new %}
                     <div class="card__sticker">Новинка</div>

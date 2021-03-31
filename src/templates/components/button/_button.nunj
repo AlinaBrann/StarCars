@@ -1,5 +1,5 @@
-{% macro button(props, attr = '', tag = 'button') %}
-<{{ tag }} class="button{% if props.class %} {{ props.class }}{% endif %}" {% if props.href %} href="{{ props.href }}"{% endif %} {% if props.type %} type="{{ props.type }}"{% endif %}{{ attr }}>
+{% macro button(props, tag = 'button') %}
+<{{ tag }} class="button{% if props.class %} {{ props.class }}{% endif %}" {% if props.href %} href="{{ props.href }}"{% endif %} {% if props.type %} type="{{ props.type }}"{% endif %}{{ props.attr }}>
 	{{ props.text }}
 </{{ tag }}>
 {% endmacro %}

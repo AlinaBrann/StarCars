@@ -2,19 +2,19 @@
 	"menuItems": [
 		{
 			"name": "Автомобили",
-			"path": "/"
+			"path": "/catalog.html"
 		},
 		{
 			"name": "Тарифы",
-			"path": "#"
+			"path": "/rates.html"
 		},
 		{
 			"name": "Условия",
-			"path": "#"
+			"path": "rent-terms.html"
 		},
 		{
 			"name": "Контакты",
-			"path": "#"
+			"path": "/contacts.html"
 		}
 	],
 	"languages": [
@@ -92,15 +92,15 @@
 			"subnavs": [
 				{
 					"title": "Автомобили",
-					"path": "/"
+					"path": "/catalog.html"
 				},
 				{
 					"title": "Условия",
-					"path": "/"
+					"path": "/rent-terms.html"
 				},
 				{
 					"title": "Тарифы",
-					"path": "/"
+					"path": "/rates.html"
 				},
 				{
 					"title": "Оплата",
@@ -609,5 +609,15 @@
 			],
 			"text": "В случае выявления любого из данных нарушений, автомобиль может быть принудительно изъят, без возмещения уплаченных средств и страхового депозита."
 		}
-	]
+	],
+	"popups": {
+		"fieldLabel": "Номер телефона",
+		"datepickerLabel": "Даты аренды",
+		"clearButton": "Еще не знаю",
+		"enterTimeButton": "Указать время получения",
+		"button": "Отправить",
+		"note": "Перезвоним в течение двух минут",
+		"thanksTitle": "Спасибо за заказ",
+		"thanksText": "Мы свяжемся с вами в течение двух минут"
+	}
 }

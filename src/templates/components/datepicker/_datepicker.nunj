@@ -1,7 +1,7 @@
 {% from "../icon/_icon.nunj" import icon %}
 
 {% macro datepicker(props)%}
-    <div class="datepicker">					
+    <div class="datepicker{% if props.class %} {{ props.class }}{% endif %}">					
         <div class="datepicker-input-wrapper input-wrapper">
             <div class="input datepicker-input _left" data-start>
                 <div class="day datepicker-input__day"></div>
@@ -15,7 +15,7 @@
                     height: "24"
                 })}}
             </div>
-            <input type="text" name="datepicker-start" value="" />
+            <input type="text" name="datepicker-start" class="datepicker-start" value="" />
         </div>
         <div class="datepicker-input-wrapper input-wrapper">
             <div class="input datepicker-input _right" data-end>
@@ -30,7 +30,7 @@
                     height: "24"
                 })}}
             </div>
-            <input type="text" name="datepicker-end" value="" />
+            <input type="text" name="datepicker-end" class="datepicker-end" value="" />
         </div>
     </div>
 {% endmacro%}

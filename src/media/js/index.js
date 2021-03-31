@@ -26,7 +26,7 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 	this.modules = {
 		Select: require('./modules/Select'),
 		Popups: require('./modules/Popups'),
-		Inputs: require('./modules/Inputs'),
+		Timer: require('./modules/Timer'),
 		Animations: require('./modules/Animations'),
 		Tabs: require('./modules/Tabs'),
 		SlickSliders: require('./modules/SlickSliders'),
@@ -96,7 +96,13 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 				}
 		  	});
 			  
-			
+			$('.button-time-trigger').on('click', function(){
+				$(this).toggleClass('_active')
+				$(this).parent('.popup-form-time-block').toggleClass('_active')
+			})
+			$('.checkbox-time-trigger').on('change', function(){
+				$(this).parents('.popup-form-time-block').toggleClass('_active')
+			})
 	});
 }();
 

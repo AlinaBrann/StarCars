@@ -12,9 +12,10 @@
                 href: props.item.buttonPath
             }) }}
         {% else %}
-            {{ button( tag='a',{
+            {{ button( {
                 class: "_full _dark-blue",
-                text: props.item.buttonText
+                text: props.item.buttonText,
+                attr: "data-popup-opener='request-auto'"
             }) }}
         {% endif %}
        

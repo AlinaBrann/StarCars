@@ -12,7 +12,8 @@
                     {{ button({
                         class: "_dark-blue _full",
                         type: "submit",
-                        text: subscribeBlock.button
+                        text: subscribeBlock.button,
+                        attr: "data-popup-opener='thanks'"
                     })}}
                 </form>
             </div>
