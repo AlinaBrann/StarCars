@@ -49,7 +49,21 @@ function createTimer() {
         </div>
         `;
 
-	startTimer();
+	// ЗАПУСК ТАЙМЕРА ПО КЛИКУ НА КНОПКУ "ОТПРАВИТЬ"
+	let trigger = $("[data-popup-opener='thanks']");
+	trigger.each(function() {
+		$(this).on("click", function() {
+			if (timePassed == 0) {
+				startTimer();
+			} else {
+				timePassed = 0;
+				setRemainingPathColor(timeLeft);
+				onTimesUp();
+				console.log(timePassed);
+				startTimer();
+			}
+		});
+	});
 
 	function onTimesUp() {
 		clearInterval(timerInterval);

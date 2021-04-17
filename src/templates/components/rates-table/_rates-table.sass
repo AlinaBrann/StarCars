@@ -1,15 +1,20 @@
 .rates-table
     width: 100%
     margin-bottom: rem(182px)
+    display: flex
+    flex-direction: column
     &-mobile
         display: block
         +min-screen($screen-md)
             display: none
     &-head
         align-items: flex-start
+        padding-top: 20px
         padding-bottom: 20px
         color: $brand_color
         border-bottom: 1px solid transparentize(#C4C4C4, .8)
+        background: $body_bg
+        order: -1
         &__title
             display: block
             margin-bottom: rem(16px)
@@ -20,20 +25,35 @@
         display: flex
         justify-content: space-between
         width: 100%
+        transition: background .5s
+        order: 1
         &._padding
             padding: rem(52px) 0 rem(12px)
         &._margin-bottom
             margin-bottom: 10px
+        &._active
+            order: 0
     &-col
         flex: 0 0 49%
         +max-screen($screen-md)
             &:first-of-type
         +min-screen($screen-md)
-            flex: 0 0 15%
+            flex: 0 0 12%
             &:first-of-type
                 margin-right: rem(40px)
+            &._small
+                flex: 0 0 8%
+                align-self: flex-start
+        &__icon
+            cursor: pointer
+            *
+                transition: .5s
+            &:hover,
+            &._active
+                *
+                    stroke: $blue
         &._big
-            flex: 0 0 55%
+            flex: 0 0 53%
     &__title
         margin-bottom: 18px
         font-size: 24px
@@ -79,4 +99,5 @@
     &__img
         +max-screen($screen-md)
             +size(100%)
+            
             object-fit: cover

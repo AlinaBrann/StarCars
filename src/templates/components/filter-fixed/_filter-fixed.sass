@@ -1,0 +1,133 @@
+.filter-fixed
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	display: flex
+	transform: translateY(-100%)
+	@extend .transition
+	background: $body_bg
+	z-index: 1000
+	&._toggle
+		transform: translateY(0%)
+	&._open
+		.filter
+			opacity: 1
+			pointer-events: all
+			&-backdrop
+				pointer-events: all
+	.container
+		position: relative
+		padding-top: 16px
+		padding-bottom: 16px
+		background: $body_bg
+		+min-screen($screen-md)
+			padding-top: rem(25px) 
+			padding-bottom: rem(25px)
+		&:after
+			+b
+			bottom: 0
+			left: -$indent-col-xs
+			width: calc(100% + #{$indent-col-xs} * 2 )
+			height: 1px
+			background: transparentize($grey, .8)
+			+min-screen($screen-lg)
+				left: $indent-col-md
+				width: calc(100% - #{$indent-col-md} * 2 )
+	.filter-parameters
+		$parent: &
+		display: flex
+		margin-bottom: 0
+		&-list
+			&__item
+				+max-screen($screen-md)
+					font-size: 16px
+					margin-right: 21px
+					&:after
+						right: -13px
+					&._hidden
+						display: none
+	.filter
+		@extend .transition
+		+max-screen($screen-sm)
+			position: absolute
+			width: 100%
+			align-items: flex-start
+			top: calc(100% + 15px)
+			left: 0
+			background: $body_bg
+			opacity: 0
+			z-index: 1
+			pointer-events: none
+
+	._image-type
+		.filter-parameters
+			&-list
+				
+				+max-screen($screen-md)
+					&__item
+						width: 60px
+						flex: 0 0 60px
+						margin: 0
+						&:not(:last-of-type)
+							border-right: 1px solid $brand_color
+					&__logo
+						max-height: rem(30px)
+				+max-screen($screen-sm)
+					flex-wrap: wrap
+					&__item
+						height: 50px
+						margin-bottom: 12px
+						border: 2px solid #0F2733 
+						&:not(:last-of-type)
+							border: 2px solid #0F2733 
+						&._active
+							border-color: #194FDB
+							box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+	&__button._small
+		+max-screen($screen-sm)
+			height: 40px
+			font-size: 16px
+		
+.show-more
+	display: none
+	width: 70px
+	height: 40px
+	margin-left: rem(40px)
+	background: transparentize(#FFF,0.9)
+	text-align: center
+	color: $brand_color
+	border: none
+	border-radius: 4px
+	._compact &
+		display: none
+		+min-screen($screen-md)
+			display: block
+		+min-screen($screen-lg)
+			display: none
+		
+.filter-trigger
+	position: relative
+	height: 40px
+	padding: 0 35px 0 16px
+	line-height: 36px
+	color: $brand_color
+	background: #173849
+	border: 1px solid #119EBD
+	border-radius: 4px
+	.icon
+		position: absolute
+		top: 45%
+		right: 15px
+		transform: translateY(-50%)
+	._open &
+		.icon
+			transform: rotate(180deg) translateY(15%)
+
+.filter-backdrop
+	position: fixed
+	+size(100vw,100vh)
+	top: 0
+	left: 0
+	pointer-events: none
+	z-index: -1

@@ -6,35 +6,40 @@
 {% from "../components/filter/_filter.nunj" import filter %}
 {% from "../components/banner/_banner.nunj" import banner %}
 {% from "../components/impeccable-rental/_impeccable-rental.nunj" import impeccableRental %}
+{% from "../components/filter-fixed/_filter-fixed.nunj" import filterFixed %}
 
 {% block title %}Автопарк / {{ super() }}{% endblock title %}
 
 {% block content %}
-
-	{% include '../components/header/_header.nunj' %}
-
-	<div class="container page">
-		{{ filter({
-			title: catalog.filterTitle
-		}) }}
-		<section class="cars" data-catalog>
-			<div class="row">
-				{% for car in cars %}
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 card-wrapper">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
-					</div>
-				{% endfor %}
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<div class="no-result"></div>
+	<div class="page-toggled-header">
+		{% include '../components/header/_header.nunj' %}
+		{{ filterFixed() }}
+		<div class="container page">
+			{{ filter({
+				title: catalog.filterTitle,
+				class: "filter-main",
+				types: true
+			}) }}
+			<section class="cars" data-catalog>
+				<div class="row">
+					{% for car in cars %}
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 card-wrapper">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
 				</div>
-			</div>
-		</section>
-		{% include '../components/advantages/_advantages.nunj' %}
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class="no-result">Нет подходящих вариантов</div>
+					</div>
+				</div>
+			</section>
+			{% include '../components/advantages/_advantages.nunj' %}
+		</div>
+		{% include '../components/footer/_footer.nunj' %}
 	</div>
-	{% include '../components/footer/_footer.nunj' %}
+	
 {% endblock content %}

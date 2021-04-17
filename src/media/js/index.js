@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { css, each } from "jquery";
 global.TweenMax = TweenMax;
 global.$ = global.jQuery = require("jquery");
 global.Draggable = Draggable;
@@ -24,15 +25,13 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 
 	this.helpers = {};
 	this.modules = {
-		Select: require('./modules/Select'),
 		Popups: require('./modules/Popups'),
 		Timer: require('./modules/Timer'),
 		Animations: require('./modules/Animations'),
 		Tabs: require('./modules/Tabs'),
 		SlickSliders: require('./modules/SlickSliders'),
 		Datepicker: require('./modules/Datepicker'),
-		
-		// Filter: require('./modules/Filter'),
+		Filter: require('./modules/Filter'),
 	};
 
 	// Startup
@@ -58,51 +57,51 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 				}).last().addClass('_nobullet');
 			});
 		});
-		var fActive;
-		function filterColor(value){
-			if(fActive != value){
-				var container = $('[data-catalog]'),
-				car = container.find('.card');
-				car.parent('.card-wrapper').hide()
-				.filter(function(elem){
-					return $(this).attr("data-type") === value || $(this).attr("data-brand") === value
-				}).parent('.card-wrapper').show();
-				
-				fActive = value;
-			}
-		   }
-		//    $('[data-parameter]').each(function(){
-		// 		$(this).on('click', function(){
-		// 			var attr = $(this).attr('data-value')
-		// 			console.log(attr);
-		// 			filterColor(attr);
-		// 		} )
-		//    })
-		   $('[data-parameter]').on('click', function(){
-			   	var val = $(this).attr('data-value'),
-				   container = $('[data-catalog]'),
-				   cardWrapper = container.find('.card-wrapper');
-				$(this).siblings('[data-parameter]').removeClass('_active')
-				$(this).addClass('_active')
-				if (val === 'all') {
-					cardWrapper.removeClass('_hide').addClass('_show');
-				} else {
-					cardWrapper.addClass('_hide').removeClass('_show');
-					cardWrapper.find("[data-type=" + val +"]").parent(cardWrapper).removeClass('_hide').addClass('_show');
-					cardWrapper.find("[data-brand=" + val +"]").parent(cardWrapper).removeClass('_hide').addClass('_show');
-				}
-				if ($('.card-wrapper._show').length == 0) {
-					container.find('.no-result').text('No results')
-				}
-		  	});
-			  
-			$('.button-time-trigger').on('click', function(){
-				$(this).toggleClass('_active')
-				$(this).parent('.popup-form-time-block').toggleClass('_active')
-			})
-			$('.checkbox-time-trigger').on('change', function(){
-				$(this).parents('.popup-form-time-block').toggleClass('_active')
-			})
+
+		var fixedFilter = $('.filter-fixed'),
+			filter = fixedFilter.find('.filter-parameters'),
+			filterItem = filter.find('.filter-parameters-list__item');
+		if ($(window).width() <= 1124 && $(window).width() >= 869) {
+				$('.filter-fixed .filter-parameters._image-type').find('.filter-parameters-list__item').slice(2).addClass('_hidden')
+				$('.filter-fixed .filter-parameters._text-type').find('.show-more').hide()
+				filter.each(function(){
+					var childs = $(this).find('.filter-parameters-list__item').not('._hidden'),
+					length = childs.length
+					$(this).find('.show-more span').text(length)
+				})
+		}
+		
+		$('.show-more').click(function() {
+			
+			$(this).hide().parents('.filter-parameters').find('.filter-parameters-list__item').slice(2).toggleClass('_hidden');
+			$(this).parent('.filter-parameters').siblings('.filter-parameters').find('.filter-parameters-list__item').slice(2).addClass('_hidden');
+			var otherItem = $(this).parent('.filter-parameters').siblings('.filter-parameters').find('.filter-parameters-list__item._hidden'),
+			otherItemLength = otherItem.length;
+			$(this).parent('.filter-parameters').siblings('.filter-parameters').find('.show-more').show().find('span').text(otherItemLength)
+			$('.filter-parameters-list__item:not(._hidden):nth-of-type(2)').toggleClass('_nobullet')
+		
+		});
+		
+		$('.filter-trigger').on('click', function() {
+			$('.filter-fixed').toggleClass('_open')
+		})
+		$('.filter-backdrop').on('click', function() {
+			$('.filter-fixed').removeClass('_open')
+		})
+		
+		
+		$('.button-time-trigger').on('click', function(){
+			$(this).toggleClass('_active')
+			$(this).parent('.popup-form-time-block').toggleClass('_active')
+		})
+		$('.checkbox-time-trigger').on('change', function(){
+			$(this).parents('.popup-form-time-block').toggleClass('_active')
+		})
+
+		$('.rates-table-col__icon').on('click', function(){
+			$(this).toggleClass('_active')
+			$(this).parents('.rates-table-row').toggleClass('_active')
+		})
 	});
 }();
 

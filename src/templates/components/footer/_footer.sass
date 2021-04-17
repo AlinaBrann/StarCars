@@ -1,7 +1,9 @@
 .footer
+	position: relative
 	color: $brand_color
 	font-size: 18px
 	text-align: center
+	z-index: 10
 	+min-screen($screen-md)
 		font-size: rem(18px)
 		text-align: left
@@ -61,7 +63,7 @@
 			+min-screen($screen-md)
 				color: transparentize(#FFF,.5)
 			&:hover
-				color: #FFF
+				color: $blue
 			+min-screen($screen-md)
 				line-height: rem(24px)
 	&-info
@@ -69,8 +71,10 @@
 		flex-direction: column
 		justify-content: space-between
 		height: 100%
-		+min-screen($screen-lg)
+		+min-screen($screen-md)
 			padding-left: 8.033vw
+		+min-screen($screen-lg)
+			padding-left: 0
 	&__text
 		line-height: rem(22px)
 		p

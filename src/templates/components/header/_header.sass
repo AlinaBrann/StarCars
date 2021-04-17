@@ -1,39 +1,47 @@
 .header
-	position: fixed
+	position: relative
 	top: 0
 	left: 0
 	display: block
 	width: 100%
 	background: $body_bg
+	transform: translateY(0%)
+	@extend .transition
 	z-index: 100
+	+min-screen($screen-md)
+		&._toggle
+			transform: translateY(-100%)
 	&__container
 		position: relative
 		padding-top: 15px
+		+max-screen($screen-xs)
+			padding-left: 24px
+			padding-right: 24px
 		+min-screen($screen-md)
 			padding-top: 0
 		&:after
 			+b
 			bottom: 0
-			left: 0
-			width: 100%
+			left: -$indent-col-xs
+			width: calc(100% + #{$indent-col-xs} * 2 )
 			height: 1px
-			background: transparentize($grey, .8)
+			background: #0F2733
 			+min-screen($screen-lg)
 				left: $indent-col-md
-				width: calc(100% - #{$indent-col-md} *2 )
+				width: calc(100% - #{$indent-col-md} * 2 )
 	&-nav
 		display: flex
 		position: relative
 		justify-content: space-between
-		margin-top: 15px
+		margin-top: 12px
 		&:after
 			+b
 			top: 0
-			left: -$indent-col-xs
-			width: calc(100% + #{$indent-col-xs} * 2)
+			left: -$indent-col-xs * 2
+			width: calc(100% + #{$indent-col-xs} * 4)
 			height: 1px
-			background: transparentize($grey, .8)
-		+min-screen($screen-sm)
+			background: #0F2733
+		+min-screen($screen-xs)
 			align-items: center
 			justify-content: center
 		+min-screen($screen-md)
@@ -44,34 +52,44 @@
 				display: none
 		&__item
 			position: relative
-			padding: 15px 0
-			+min-screen($screen-sm)
+			padding: 12px 0 15px
+			+min-screen($screen-xs)
 				margin: 0 20px
 			+min-screen($screen-md)
-				padding: rem(50px) 0
+				padding: rem(45px) 0
 				margin-right: rem(24px)
 				margin-left: 0
 		&__link
-			
 			display: inline-block
+			@extend .transition
 			&:after
 				+b
 				bottom: 0
+				left: -5px
 				width: 0
 				height: 1px
 				background: #194FDB
 				box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
 				transition: width $default-transition-duration
+				z-index: 1
 
-			&:hover
+			&:hover,
+			&._active
+				color: $blue
+			&._active
 				&:after
-					width: 100%
+					width: calc(100% + 10px)
 			+min-screen($screen-md)
 				font-size: rem(21px)
+			&._active
+				cursor: default
+				pointer-events: none
 	&__phone
 		&-icon
 			+min-screen($screen-sm)
 				+size(rem(20px))
 			+min-screen($screen-md)
 				+size(rem(25px))
+	&__location
+		color: $brand_color
 	

@@ -42,8 +42,8 @@ function Animations() {
 			link = $('[data-anchor="' + ancor + '"]');
 		ScrollTrigger.create({
 			trigger: panel,
-			start: '"top ' + (headerHeight + 3) + '"', // when the top of the trigger hits the top of the viewport
-			end: "bottom 19%",
+			start: "top top+=10%", // when the top of the trigger hits the top of the viewport
+			end: "bottom 12%",
 			markers: false,
 			onLeave: () => {
 				navLinks.removeClass("_active");
@@ -63,13 +63,42 @@ function Animations() {
 	ShowHelper2.setViewpostScale(1);
 	ScrollTrigger.create({
 		trigger: ".rent-terms-nav",
-		start: "top top+=" + headerHeight,
-		endTrigger: ".rent-terms",
-		end: "bottom bottom",
+		start: "top top+=8%",
+		endTrigger: ".advantages",
+		end: "bottom bottom+=20%",
 		pin: true,
 		pinSpacing: false,
 		scrub: 1
 	});
+	ScrollTrigger.create({
+		trigger: ".detail-sidebar-wrapper",
+		start: "top top+=20px",
+		endTrigger: ".advantages",
+		end: "top+=-20% bottom",
+		pin: true,
+		markers: false,
+		pinSpacing: false,
+		scrub: 1
+	});
+	ScrollTrigger.create({
+		trigger: ".rates-table-head",
+		start: "top top",
+		endTrigger: ".rates-table",
+		end: "bottom top",
+		pin: true,
+		markers: false,
+		pinSpacing: false,
+		scrub: 1
+	});
+	ScrollTrigger.create({
+		trigger: ".filter-main",
+		start: "top+=20% top",
+		end: 99999,
+		markers: false,
+		toggleClass: { className: "_toggle", targets: ".filter-fixed" },
+		onLeaveBack: () => $(".filter-fixed").removeClass(" _open")
+	});
+
 	const $targets = $("[data-auto-show]");
 
 	if ($targets.length) {

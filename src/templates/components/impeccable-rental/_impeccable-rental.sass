@@ -9,7 +9,7 @@
     &._bordered-on-mobile
         +max-screen($screen-md)
             padding: 30px 15px
-            border: 1px solid $brand_color
+            border: 1px solid transparentize($brand_color, .7)
 
     &__content
         ._with-padding &
@@ -28,17 +28,16 @@
         +min-screen($screen-lg)
             font-size: rem(40px)
         +min-screen($screen-xlg)
-            margin-bottom: rem(10px)
-            font-size: rem(42px)
+            margin-bottom: rem(20px)
+            font-size: rem(48px)
+            ._big & 
+                margin-bottom: rem(34px)
     &-list
         &__item
             position: relative
             padding: 0 30px 0 40px
             font-size: rem(18px)
-            +min-screen($screen-lg)
-                padding: 0 rem(46px)
-                &:before
-                    left: rem(15px)
+            
             &:not(:last-of-type)
                 margin-bottom: rem(13px)
             &:before
@@ -48,3 +47,13 @@
                 left: 0px
                 background: url('../img/arrow-blue.svg') no-repeat center
                 background-size: contain
+            +min-screen($screen-lg)
+                padding: 0 rem(46px)
+                ._big & 
+                    font-size: rem(24px)
+                    line-height: rem(33.6px)
+                    &:before
+                        +size(rem(35px),rem(35px))
+                        left: 0
+                &:before
+                    left: rem(15px)

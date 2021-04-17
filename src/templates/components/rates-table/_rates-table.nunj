@@ -18,6 +18,8 @@
         <div class="rates-table-col rates-table-head__col">
             <div class="rates-table-head__title">Депозит</div>
         </div>
+        <div class="rates-table-col rates-table-head__col" style="display: none">
+        </div>
     </div>
     {% for item in rates.table %}
         <div class="rates-table-row _aife _padding">
@@ -43,6 +45,12 @@
             </div>
             <div class="rates-table-col">
                 <div class="rates-table__text">{{ item.deposit }}</div>
+            </div>
+            <div class="rates-table-col  flex _aic _jcc _small" style="display: none">
+                <svg class="rates-table-col__icon" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="24" stroke="#2C424B" stroke-width="2"/>
+                    <path d="M21.7093 27.9141L28.0732 34.2781C30.3738 31.9775 31.1685 28.7414 30.4574 25.7944L39.2102 19.9592L29.6642 10.4133L23.8291 19.166C20.8821 18.4549 17.6459 19.2496 15.3453 21.5502L21.7093 27.9141ZM21.7093 27.9141L12.5611 37.0623" stroke="#2C424B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </div>
         </div>
     {% endfor %}

@@ -1,32 +1,103 @@
 .car-gallery
-    margin-bottom: 12px
-    +min-screen($screen-md)
-        margin-bottom: rem(50px)
-    &-slider
-        width: 100%
-        margin-bottom: rem(10px)
-    &-previews
-        margin: 0 rem(-5px)
-        &__slide
-            padding: 0 5px
-            height: rem(100px)
-            cursor: pointer
-    &-slide
-        &__img
-            +size(100%)
-            object-fit: cover
-    &-dots
-        $parent: &
-        display: flex
-        align-items: center
-        justify-content: center
-        &__item
-            display: block
-            +size(6px)
-            margin: 0 2px
-            background: transparentize(#FFF, .7)
-            transform: scale(0.6)
-            border-radius: 50%
-            &._active
-                background: #FFF
-                transform: scale(1)
+	margin-bottom: 12px
+	+min-screen($screen-md)
+		margin-bottom: rem(50px)
+	&-slider
+		width: 100%
+		height: rem(240px)
+		margin-bottom: rem(10px)
+		z-index: 0
+		+min-screen($screen-md)
+			height: rem(504px)
+		&__slide
+			height: 100%
+	&-previews
+		position: relative
+		padding-bottom: 20px
+		&:after,
+		&:before
+			+b
+			+size(rem(20px), 100%)
+			top: 0
+			left: 0
+			background: linear-gradient(90deg, rgba(9, 27, 36, 0.8) 0%, rgba(9, 27, 36, 0) 100%)
+			z-index: 1
+		&:after
+			right: 0
+			left: auto
+			background: linear-gradient(-90deg, rgba(9, 27, 36, 0.8) 0%, rgba(9, 27, 36, 0) 100%)
+		&__slide
+			position: relative
+			padding: 0 2px
+			height: rem(100px)
+			cursor: pointer
+			&:after
+				+b
+				bottom: -10px
+				left: 2px
+				width: calc(100% - 4px)
+				height: 2px
+				background: #194FDB
+				opacity: 0
+				box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+				@extend .transition
+			.slick-current &
+				&:after
+					opacity: 1
+	&-slide
+		&__img
+			+size(100%)
+			object-fit: cover
+	&-dots
+		$parent: &
+		display: flex
+		align-items: center
+		justify-content: center
+		&__item
+			display: block
+			+size(6px)
+			margin: 0 2px
+			background: transparentize(#FFF, .7)
+			transform: scale(0.6)
+			border-radius: 50%
+			&._active
+				background: #FFF
+				transform: scale(1)
+	&-main
+		position: relative
+	&-controllers
+		position: absolute
+		top: 0
+		left: 0
+		display: none
+		+size(100%)
+		overflow: hidden
+		z-index: 1px
+		+min-screen($screen-md)
+			display: flex
+		&__button
+			display: block
+			+size(50%,100%)
+			display: flex
+			align-items: center
+			padding: 24px
+			background: none
+			border: none
+			@extend .transition
+			cursor: pointer
+			._hidden &
+				opacity: 0
+			&._next
+				justify-content: flex-end
+				._hidden &
+					transform: translateX(10%)
+			&._prev
+				._hidden &
+					transform: translateX(-10%)
+			circle
+				@extend .transition
+			&:hover
+				circle
+					opacity: 0.5
+				path
+					stroke: $blue

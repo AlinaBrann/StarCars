@@ -19,7 +19,6 @@ body
 	background: $body_bg
 	color: #FFF
 	font-family: 'Arsenal-Regular'
-	font-weight: normal
 	
 .clearfix
 	// zoom: 1
@@ -170,9 +169,12 @@ body
 ._pl0-xs
 	+max-screen($screen-sm)
 		padding-left: 0
+._pr0-xs
+	+max-screen($screen-sm)
+		padding-right: 0
 
 .border-block
-	border: 1px solid $brand_color
+	border: 1px solid transparentize($brand_color, .7)
 
 .proportional-height
 	&:before
@@ -180,11 +182,28 @@ body
 		display: block
 		width: 0
 		padding-top: 64.6%
+	+max-screen($screen-sm)
+		&:before
+			padding-top: 63.7%
+
 
 .page
-	padding-top: 140px
+	position: relative
+	padding-top: 40px
+	z-index: 100
 	+min-screen($screen-md)
-		padding-top: rem(160px)
+		padding-top: rem(40px)
+	&__title
+		margin-bottom: 24px
+		text-align: center
+		font-size: 36px
+		line-height: rem(39.6px)
+		+min-screen($screen-lg)
+			margin-bottom: rem(48px)
+			font-size: rem(56px)
+			line-height: rem(67px)
+		&._mb0
+			margin-bottom: 0
 
 .card-wrapper
 	overflow: hidden
@@ -207,13 +226,24 @@ body
 			line-height: rem(72px)
 			margin-bottom: rem(48px)
 
-.page
-    &__title
-        margin-bottom: 24px
-        text-align: center
-        font-size: 36px
-        line-height: rem(39.6px)
-        +min-screen($screen-lg)
-            margin-bottom: rem(48px)
-            font-size: rem(56px)
-            line-height: rem(67px)
+.no-result
+	display: none
+	margin-bottom: rem(80px)
+	text-align: center
+	font-size: rem(48px)
+	+max-screen($screen-sm)
+		font-size: 24px
+
+.pin-spacer
+	z-index: 10
+
+.full-height
+	display: flex
+	flex-direction: column
+	height: 100vh
+	margin-bottom: 40px
+	+min-screen($screen-md)
+        margin-bottom: rem(80px)
+
+.cars
+	margin-bottom: 30px

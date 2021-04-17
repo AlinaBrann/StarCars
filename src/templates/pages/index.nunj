@@ -6,112 +6,123 @@
 {% from "../components/filter/_filter.nunj" import filter %}
 {% from "../components/banner/_banner.nunj" import banner %}
 {% from "../components/impeccable-rental/_impeccable-rental.nunj" import impeccableRental %}
+{% from "../components/filter-fixed/_filter-fixed.nunj" import filterFixed %}
 
 {% block title %}Главная / {{ super() }}{% endblock title %}
 
 {% block content %}
-
-	{% include '../components/header/_header.nunj' %}
-
-	{% include '../components/intro/_intro.nunj' %}
-	<div class="container">
-		{{ filter({
-			title: home.filterTitle,
+	<div class="page-toggled-header">
+		<section class="full-height">
+			{% include '../components/header/_header.nunj' %}
+		
+			{% include '../components/intro/_intro.nunj' %}
+		</section>
+		
+		{{ filterFixed({
 			fakeFilter: true
 		}) }}
-		<section class="cars-sliced">
-			<div class="row">
-				{% for car in cars.slice(0, 2)%}
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
-					</div>
-				{% endfor %}
-			</div>
-		</section>
-		<section class="cars-sliced">
-			<div class="row">
-				{% for car in cars.slice(2, 3)%}
-					<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
-					</div>
-				{% endfor %}
-				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 _order-1">
-					{{ banner({ 
-						class: "_margin-left",
-						item: bannerWinter
-					}) }}
+		<div class="container">
+			{{ filter({
+				title: home.filterTitle,
+				class: "filter-main",
+				fakeFilter: true,
+				types: true
+			}) }}
+			<section class="cars-sliced">
+				<div class="row">
+					{% for car in cars.slice(0, 2)%}
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
 				</div>
-			</div>
-		</section>
-		{% include '../components/advantages/_advantages.nunj' %}
-		<section class="cars-sliced">
-			<div class="row">
-				{% for car in cars.slice(1, 3)%}
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
+			</section>
+			<section class="cars-sliced">
+				<div class="row">
+					{% for car in cars.slice(2, 3)%}
+						<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
+					<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 _order-1">
+						{{ banner({ 
+							class: "_margin-left",
+							item: bannerWinter
+						}) }}
 					</div>
-				{% endfor %}
-			</div>
-		</section>
-		<section class="cars-sliced">
-			<div class="row">
-				{% for car in cars.slice(3, 4)%}
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
-					</div>
-				{% endfor %}
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					{{ impeccableRental({
-						title: impeccableRentalContent.title, 
-						class:"proportional-height border-block _with-padding hidden-xs"
-					})}}
 				</div>
-			</div>
-		</section>
-		<section class="cars-sliced">
-			<div class="row">
-				{% for car in cars.slice(2, 4)%}
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						{{ card({
-							name: car.name,
-							item: car
-						})}}
-					</div>
-				{% endfor %}
-			</div>
-		</section>
-		<section class="cars-sliced">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 hidden-xs">
-					{{ banner({ 
-						class: "_margin-right",
-						item: bannerPorshe
-					}) }}
+			</section>
+			{% include '../components/advantages/_advantages.nunj' %}
+			<section class="cars-sliced">
+				<div class="row">
+					{% for car in cars.slice(1, 3)%}
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
 				</div>
-				{% for car in cars.slice(3, 4)%}
-					<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
-						{{ card({
-							name: car.name,
-							item: car
+			</section>
+			<section class="cars-sliced">
+				<div class="row">
+					{% for car in cars.slice(3, 4)%}
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						{{ impeccableRental({
+							title: impeccableRentalContent.title, 
+							class:"proportional-height border-block _with-padding hidden-xs"
 						})}}
 					</div>
-				{% endfor %}
-				
-			</div>
-		</section>
-		{% include '../components/subscribe/_subscribe.nunj' %}
+				</div>
+			</section>
+			<section class="cars-sliced">
+				<div class="row">
+					{% for car in cars.slice(2, 4)%}
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+			<section class="cars-sliced">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 hidden-xs">
+						{{ banner({ 
+							class: "_margin-right",
+							item: bannerPorshe
+						}) }}
+					</div>
+					{% for car in cars.slice(3, 4)%}
+						<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+							{{ card({
+								name: car.name,
+								item: car
+							})}}
+						</div>
+					{% endfor %}
+					
+				</div>
+			</section>
+			{% include '../components/subscribe/_subscribe.nunj' %}
+		</div>
+		{% include '../components/footer/_footer.nunj' %}
 	</div>
-	{% include '../components/footer/_footer.nunj' %}
+	
 {% endblock content %}

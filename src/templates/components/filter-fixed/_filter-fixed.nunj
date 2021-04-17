@@ -1,0 +1,42 @@
+{% from "../filter/_filter.nunj" import filter %}
+{% from "../button/_button.nunj" import button %}
+{% from "../icon/_icon.nunj" import icon %}
+
+{% macro filterFixed(props) %}
+<div class="filter-fixed">
+    <div class="container">
+        <div class="row _aic">
+            <div class="col-xs-7 col-md-10">
+                <div class="filter-trigger visible-xs">
+                    <span>Тип авто или марка</span>
+                    {{ icon({
+                        name: "arrow",
+                        width: "12",
+                        height: "12"
+                    })}}
+                </div>
+                <div class="filter-backdrop"></div>
+                {% if props.fakeFilter === true %}
+                {{ filter({
+                    class: "_compact",
+                    small: true,
+                    fakeFilter: true
+                }) }}
+                {% else %}
+                    {{ filter({
+                        class: "_compact",
+                        small: true
+                    }) }}
+                {% endif %}
+            </div>
+            <div class="col-xs-5 col-md-2 flex _jcfe">
+                {{ button({
+                    text: intro.button,
+                    class: "filter-fixed__button _small",
+                    attr: "data-popup-opener='request'"
+                })}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

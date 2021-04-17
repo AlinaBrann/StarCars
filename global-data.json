@@ -146,13 +146,18 @@
 	},
 	"intro": {
 		"title": "Аренда премиальных <br>авто в Москве",
-		"button": "Забротировать",
+		"button": "Забронировать",
 		"buttonPath": "/"
 	},
 	"filterBlock": {
 		"byType": {
 			"title": "по типу",
 			"options": [
+				{
+					"name": "Все",
+					"value": "all",
+					"path": "/"
+				},
 				{
 					"name": "Все автомобили",
 					"value": "all",
@@ -288,6 +293,11 @@
 				}
 			],
 			"gallery": [
+				"car-1.jpg",
+				"car-2.jpg",
+				"car-3.jpg",
+				"car-4.jpg",
+				"car-5.jpg",
 				"car-1.jpg",
 				"car-2.jpg",
 				"car-3.jpg",

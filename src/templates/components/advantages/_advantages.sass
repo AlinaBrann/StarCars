@@ -17,13 +17,13 @@
                 display: block
                 height: 1px
                 flex: auto
-                background: #FFF
+                background: #324A52
         span
             margin: 0 rem(10px) rem(10px)
     &-list
         display: flex
         flex-direction: column
-        +min-screen($screen-sm)
+        +min-screen($screen-md)
             flex-direction: row
             justify-content: space-between
         &__counter
@@ -31,7 +31,7 @@
             display: flex
             justify-content: center
             margin-bottom: 24px
-            +min-screen($screen-sm)
+            +min-screen($screen-md)
                 display: none
             &:before
                 +b
@@ -52,7 +52,7 @@
                 border-radius: 50%
         &__item
             margin-bottom: 32px
-            +min-screen($screen-sm)
+            +min-screen($screen-md)
                 margin-bottom: 0
                 flex: 0 0 31.2%
         &__title

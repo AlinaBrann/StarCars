@@ -1,10 +1,12 @@
 .detail-sidebar
+    position: relative
     flex-direction: column
     background: #0F2733
+    z-index: 100
     &-head
         padding: 20px 20px 12px
         +min-screen($screen-md)
-            padding: rem(22px) rem(20px)
+            padding: rem(22px) rem(20px) rem(17px)
             border-bottom: 1px solid $body_bg
         &__col
             flex: auto
@@ -15,12 +17,13 @@
             display: block
             font-size: rem(21px)
     &-price-list
+        flex-direction: column
         &__item
             margin-bottom: 8px
             font-size: 14px
             color: $brand_color
             +min-screen($screen-md)
-                margin-bottom: rem(10px)
+                margin-bottom: rem(8px)
                 font-size: rem(16px)
             span
                 color: #FFF
@@ -29,7 +32,7 @@
                 &:hover
                     box-shadow: none
     &-body
-        padding: 20px
+        padding: 0px
         +min-screen($screen-md)
             padding: rem(20px) rem(20px) rem(33px)
         &__title
@@ -45,10 +48,25 @@
             font-size: rem(16px)
             span
                 display: block
-                margin-bottom: rem(8px)
+                margin-bottom: rem(5px)
                 color: $brand_color
                 font-size: 16px
     &-note
         margin-top: rem(16px)
         text-align: center
         color: $brand_color
+    &__button
+        +max-screen($screen-xs)
+            position: fixed
+            bottom: 24px
+            left: $indent-col-xs
+            width: calc(100% - #{$indent-col-xs} * 2) !important
+            z-index: 1000
+    &__backdrop
+        +max-screen($screen-xs)
+            position: fixed
+            bottom: -1px
+            left: 0
+            +size(100vw, 100px)
+            background: linear-gradient(0deg, #091B24 0%, rgba(9, 27, 36, 0) 100%)
+            z-index: 0

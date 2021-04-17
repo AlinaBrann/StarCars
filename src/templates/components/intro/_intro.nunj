@@ -8,7 +8,23 @@
                     href: intro.buttonPath,
                     attr: "data-popup-opener='request-auto'"
                 }) }}
+                
             </div>
         </div>
+    </div>
+    <div class="intro-scroll">
+        <svg class="intro-scroll__icon" width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32817 4.99292L1.83218 2.49694L0.999999 3.32912L4.32873 6.65785L5.16091 5.82567L5.16035 5.82511L7.65692 3.32854L6.82473 2.49636L4.32817 4.99292Z" fill="white"/>
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32817 9.99292L1.83218 7.49694L0.999999 8.32912L4.32873 11.6579L5.16091 10.8257L5.16035 10.8251L7.65692 8.32854L6.82473 7.49636L4.32817 9.99292Z" fill="white"/>
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32621 14.9929L1.83023 12.4969L0.998046 13.3291L4.32678 16.6579L5.15896 15.8257L5.15839 15.8251L7.65496 13.3285L6.82278 12.4964L4.32621 14.9929Z" fill="white"/>
+        </svg>
+
+        <span>Scroll</span>
+
+        <svg class="intro-scroll__icon" width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32817 4.99292L1.83218 2.49694L0.999999 3.32912L4.32873 6.65785L5.16091 5.82567L5.16035 5.82511L7.65692 3.32854L6.82473 2.49636L4.32817 4.99292Z" fill="white"/>
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32817 9.99292L1.83218 7.49694L0.999999 8.32912L4.32873 11.6579L5.16091 10.8257L5.16035 10.8251L7.65692 8.32854L6.82473 7.49636L4.32817 9.99292Z" fill="white"/>
+            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M4.32621 14.9929L1.83023 12.4969L0.998046 13.3291L4.32678 16.6579L5.15896 15.8257L5.15839 15.8251L7.65496 13.3285L6.82278 12.4964L4.32621 14.9929Z" fill="white"/>
+        </svg>
     </div>
 </section>

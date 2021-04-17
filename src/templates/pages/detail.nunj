@@ -19,7 +19,7 @@
         {% for item in cars.slice(0,1)%}
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1 class="page__title">{{ item.name }}</h1>
+                    <h1 class="page__title">Аренда {{ item.name }}</h1>
                 </div>
             </div>
             <div class="row">
@@ -32,7 +32,8 @@
                         item: item
                     })}}
                     {{ parameters({
-                        item: item
+                        item: item,
+                        class: "_big"
                     })}}
                     {{ aboutCar({ 
                         item: item
@@ -40,16 +41,23 @@
                     {{ rental({
                         item: item
                     })}}
-                    {{ impeccableRental({
-                        class: "_margin-bottom _bordered-on-mobile",
-						title: impeccableRentalContent.titleShort
-					})}}
+                    <div class="row">
+                        <div class="col-xs-12 col-md-10">
+                            {{ impeccableRental({
+                                class: "_margin-bottom _bordered-on-mobile _big",
+                                title: impeccableRentalContent.titleShort
+                            })}}
+                        </div>
+                    </div>
+                    
                     
                 </div>
                 <div class="col-xs-12 col-md-4 hidden-xs">
-                    {{ detailSidebar({
-                        item: item
-                    })}}
+                    <div class="detail-sidebar-wrapper">
+                        {{ detailSidebar({
+                            item: item
+                        })}}
+                    </div>
                 </div>
             </div>
         {% endfor %}

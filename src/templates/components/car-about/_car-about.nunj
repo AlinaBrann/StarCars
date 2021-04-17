@@ -8,7 +8,7 @@
             </div>
             <div class="col-xs-12 col-md-4 hidden-xs">
                 <div class="car-about-news">
-                    <img src="media/img/cars/car-1.jpg" alt="">
+                    <img src="media/img/cars/car-1.jpg" class="car-about-news__img" alt="">
                     <div class="car-about-news__text">В 1983 году Mercedes-Benz G-Class под управлением Jacky Ickx и Claude Brasseur выиграл гонку ралли Париж-Дакар.</div>
                 </div>
             </div>

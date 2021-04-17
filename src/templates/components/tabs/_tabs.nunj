@@ -2,7 +2,7 @@
     <ul class="tabs-nav">
         {% for item in contacts %}
             {% if contacts.length === 1 %}
-                <h1 class="page__title">{{ item.title }}</h1>
+                <h1 class="page__title _mb0">{{ item.title }}</h1>
             {% else %}
             <li class="tabs-nav__item{% if item.active === true %} _active-tab{% endif %}" data-tab-opener="{{ item.value }}">{{ item.title }}</li>
             {% endif %}

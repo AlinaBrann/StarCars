@@ -1,27 +1,55 @@
 {% macro filter(props) %}
-    <section class="filter">
-        <h2 class="filter__title">{{ props.title }}</h2>
+    <section class="filter{% if props.class %} {{ props.class }}{% endif %}">
+        {% if props.title %}
+            <h2 class="filter__title">{{ props.title }}</h2>
+        {% endif %}
         <div class="filter-parameters _text-type">
-            <div class="filter-parameters__title">{{ filterBlock.byType.title }}</div>
+            {% if props.types === true %}
+                <div class="filter-parameters__title">{{ filterBlock.byType.title }}</div>
+            {% endif %}
             <ul class="filter-parameters-list" data-marker-list>
-                {% for item in  filterBlock.byType.options %}
-                    <li class="filter-parameters-list__item"{% if props.fakeFilter != true %} data-parameter data-marker-item data-value="{{ item.value }}"{% endif %}>
-                        {% if props.fakeFilter %}
-                            <a href="{{ item.path }}" class="filter-parameters-list__text">{{ item.name }}</a>
-                        {% else %}
-                            <span class="filter-parameters-list__text">{{ item.name }}</span>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+                {% if props.small === true %}
+                    {% for item in filterBlock.byType.options.slice(0,1) %}
+                        <li class="filter-parameters-list__item" data-marker-item {% if props.fakeFilter != true %} data-parameter data-value="{{ item.value }}"{% endif %}>
+                            {% if props.fakeFilter %}
+                                <a href="/catalog.html" class="filter-parameters-list__text">{{ item.name }}</a>
+                            {% else %}
+                                <span class="filter-parameters-list__text">{{ item.name }}</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    {% for item in filterBlock.byType.options.slice(2) %}
+                        <li class="filter-parameters-list__item" data-marker-item {% if props.fakeFilter != true %} data-parameter data-value="{{ item.value }}"{% endif %}>
+                            {% if props.fakeFilter %}
+                                <a href="/catalog.html" class="filter-parameters-list__text">{{ item.name }}</a>
+                            {% else %}
+                                <span class="filter-parameters-list__text">{{ item.name }}</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    {% for item in  filterBlock.byType.options.slice(1) %}
+                        <li class="filter-parameters-list__item" data-marker-item {% if props.fakeFilter != true %} data-parameter data-value="{{ item.value }}"{% endif %}>
+                            {% if props.fakeFilter %}
+                                <a href="/catalog.html" class="filter-parameters-list__text">{{ item.name }}</a>
+                            {% else %}
+                                <span class="filter-parameters-list__text">{{ item.name }}</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                {% endif %}
             </ul>
+            <button class="show-more">Еще <span></span></button>
         </div>
         <div class="filter-parameters _image-type">
-            <div class="filter-parameters__title">{{ filterBlock.byBrand.title }}</div>
+            {% if props.types === true %}
+                <div class="filter-parameters__title">{{ filterBlock.byBrand.title }}</div>
+            {% endif %}
             <ul class="filter-parameters-list _jcc">
                 {% for item in  filterBlock.byBrand.options %}
                     <li class="filter-parameters-list__item"{% if props.fakeFilter != true %} data-parameter data-value="{{ item.value }}"{% endif %}>
                         {% if props.fakeFilter %}
-                            <a href="{{ item.path }}">
+                            <a href="/catalog.html">
                         {% endif %}
                                 <img src="media/img/brands/{{ item.logo }}" class="filter-parameters-list__logo" alt="{{ item.value }}">
                         {% if props.fakeFilter %}
@@ -30,6 +58,7 @@
                     </li>
                 {% endfor %}
             </ul>
+            <button class="show-more">Еще <span></span></button>
         </div>
     </section>
 {% endmacro%}

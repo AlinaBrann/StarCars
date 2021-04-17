@@ -11,7 +11,7 @@
 	{% include '../components/header/_header.nunj' %}
     <div class="container page">
             <div class="row">
-                <div class="col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-12 _pr0-xs">
                     <h1 class="page__title">{{ rates.title }}</h1>
                     {% include '../components/rates-table/_rates-table.nunj' %}
                 </div>

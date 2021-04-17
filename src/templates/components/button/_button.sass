@@ -17,10 +17,14 @@
         width: rem(260px)
         height: rem(52px)
         font-size: rem(24px)
+    &:hover
+        background: #119EBD
     &._full
         width: 100%
     &._dark-blue
         background: $blue_dark
+        &:hover
+            background: $blue
     &._border
         width: auto
         height: 48px
@@ -32,3 +36,6 @@
         &:hover,
         &._active
             background: transparentize(#02090D, .7)
+    &._small
+        width: rem(147px)
+        font-size: rem(18px)

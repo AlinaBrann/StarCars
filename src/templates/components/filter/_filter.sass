@@ -1,100 +1,168 @@
 .filter
-    display: flex
-    flex-direction: column
-    align-items: center
-    text-align: center
-    +min-screen($screen-lg)
-        padding: 0 0 rem(90px)
-    &__title
-        margin-bottom: 24px
-        font-size: 32px
-        line-height: 35px
-        +min-screen($screen-lg)
-            margin-bottom: rem(40px)
-            font-size: rem(48px)
-            line-height: rem(52.8px)
-    &-parameters
-        width: 90%
-        +min-screen($screen-lg)
-            width: 100%
-        &._image-type
-            width: 100%
-        &._text-type
-            margin-bottom: 24px
-            +min-screen($screen-lg)
-                margin-bottom: 0
-        &__title
-            margin-bottom: 16px
-            color: $brand_color
-            +min-screen($screen-lg)
-                margin-bottom: rem(16px)
-            ._image-type &
-                margin-bottom: 40px
-        &-list
-            display: flex
-            flex-wrap: wrap
-            align-items: center
-            justify-content: center
-            &__item
-                display: flex
-                align-items: center
-                position: relative
-                ._text-type &
-                    margin-right: 20px
-                    font-size: 18px
-                    line-height: 2
-                    +min-screen($screen-sm)
-                        margin-right: rem(56px)
-                    +min-screen($screen-lg)
-                        line-height: 36px
-                    &:after
-                        +b
-                        +size(3px)
-                        top: 17px
-                        right: -11px
-                        background: #FFF
-                        border-radius: 50%
-                    +min-screen($screen-sm)
-                        &:after
-                            right: rem(-32px)
-                    +min-screen($screen-lg)
-                        margin-bottom: rem(42px)
-                        font-size: rem(24px)
-                        line-height: rem(40px)
-                        &:after
-                            +size(5px)
-                            top: 20px
-                            right: rem(-32px)
-                ._image-type &
-                    margin: 0 4% 51px
-                    +min-screen($screen-sm)
-                        margin: 0 3% rem(51px)
-                    +min-screen($screen-lg)
-                        margin: 0 2.8%
-                &._nobullet
-                    margin-right: 0
-                    &:after
-                        display: none
-            &__text
-                position: relative
-                &:before
-                    +b
-                    top: calc(100% + 7px)
-                    width: 0
-                    height: 2px
-                    background: #194FDB
-                    box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
-                    transition: width .5s
-                &:hover,
-                ._active &
-                    &:before
-                        width: 100%
-            &__logo
-                max-height: 48px
-                max-width: 90px
-                +min-screen($screen-sm)
-                    max-width: rem(110px)
-                    max-height: rem(55px)
-                +min-screen($screen-lg)
-                    max-width: rem(120px)
-                    max-height: rem(58.73px)
+	display: flex
+	flex-direction: column
+	align-items: center
+	text-align: center
+	+min-screen($screen-lg)
+		padding: 0 0 rem(90px)
+	.filter-fixed &
+		padding: 16px
+		+min-screen($screen-md)
+			padding: 0
+			flex: auto
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			padding: 0
+			> *
+				flex: auto
+				width: auto !important
+	&__title
+		margin-bottom: 24px
+		font-size: 32px
+		line-height: 35px
+		+min-screen($screen-lg)
+			margin-bottom: rem(40px)
+			font-size: rem(48px)
+			line-height: rem(52.8px)
+	&-parameters
+		+min-screen($screen-md)
+			width: 90%
+		+min-screen($screen-lg)
+			width: 100%
+		&._image-type
+			width: 100%
+		&._text-type
+			margin-bottom: 24px
+			+min-screen($screen-lg)
+				margin-bottom: 0
+		&__title
+			margin-bottom: 16px
+			color: $brand_color
+			+min-screen($screen-lg)
+				margin-bottom: rem(16px)
+			._image-type &
+				margin-bottom: 40px
+		&-list
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			.filter-fixed &
+				margin-bottom: 19px
+				justify-content: flex-start
+				+min-screen($screen-sm)
+					margin-bottom: 0
+					flex-wrap: nowrap
+			._image-type &
+				.filter-fixed &
+					align-items: stretch
+			&__item
+				display: flex
+				align-items: center
+				position: relative
+				cursor: pointer
+				@extend .transition
+				._text-type &
+					margin-right: 20px
+					font-size: 18px
+					line-height: 2
+					&:after
+						+b
+						+size(3px)
+						top: 17px
+						right: -11px
+						background: #FFF
+						border-radius: 50%
+					
+					+min-screen($screen-sm)
+						margin-right: 56px
+						&:after
+							right: -32px
+					+min-screen($screen-lg)
+						margin-bottom: rem(42px)
+						font-size: rem(24px)
+						line-height: rem(40px)
+						&:after
+							+size(5px)
+							top: 20px
+							right: -32px
+						.filter-fixed &
+							margin-right: rem(22px)
+							margin-bottom: 0
+							font-size: rem(18px)
+							&:after
+								+size(3px)
+								right: rem(-12px)
+				
+				._image-type &
+					margin: 0 4% 51px
+					@extend .transition
+					+min-screen($screen-sm)
+						margin: 0 3% rem(51px)
+					+min-screen($screen-lg)
+						margin: 0 2.8%
+						.filter-fixed &
+							flex: 0 0 60px
+							padding: 0 6px
+							justify-content: center
+							align-items: center
+							margin: 0
+							&:not(:last-of-type)
+								border-right: 1px solid $brand_color
+					+max-screen($screen-sm)
+						.filter-fixed & 
+							&:not(:last-of-type)
+								border: 2px solid #0F2733 
+				&._nobullet
+					margin-right: 0 !important
+					&:after
+						display: none
+
+				&:before
+					+b
+					top: calc(100% + 7px)
+					left: 0
+					width: 100%
+					opacity: 0
+					height: 2px
+					background: #194FDB
+					box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+					@extend .transition
+				&._active
+					&:before
+						opacity: 1
+				+max-screen($screen-sm)
+					.filter-fixed & 
+						margin-right: 8px !important
+						margin-bottom: 12px
+						line-height: 32px
+						font-size: 18px
+						padding: 0 8px
+						background: #0F2733
+						border: 2px solid #0F2733 
+						border-right-color: #0F2733 
+						border-radius: 4px
+						&:after
+							display: none
+						&:before
+							display: none
+						&._active
+							border-color: #194FDB
+							box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
+			&__logo
+				max-height: 48px
+				max-width: 90px
+				margin-bottom: 13px
+				+min-screen($screen-sm)
+					max-width: rem(110px)
+					max-height: rem(55px)
+				+min-screen($screen-lg)
+					max-width: rem(120px)
+					max-height: rem(58.73px)
+					margin-bottom: rem(28px)
+				.filter-fixed &
+					max-height: rem(30px)
+					max-width: 90%
+					margin: 0 auto
+					display: block

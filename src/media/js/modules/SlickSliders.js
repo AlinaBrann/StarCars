@@ -8,9 +8,17 @@ const OPTIONS_BY_TYPE = {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		asNavFor: "galleryNav",
-		fade: true,
+		fade: false,
 		focusOnSelect: true,
-		infinite: true
+		infinite: true,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					fade: false
+				}
+			}
+		]
 	},
 	galleryNav: {
 		slidesToShow: 5,
@@ -18,6 +26,8 @@ const OPTIONS_BY_TYPE = {
 		mobileFirst: true,
 		asNavFor: "galleryMain",
 		focusOnSelect: true,
+		centerPadding: "25px",
+		centerMode: true,
 		infinite: true
 		/*responsive: [
 			{
@@ -66,6 +76,30 @@ SlickSliders.prototype = {
 
 		let $subSlides = $container.find("[data-slider-sub-slides]").children();
 		let $previews = $container.find("[data-slider-previews]").children();
+		let spoiler = $(".car-gallery-controllers"),
+			timeout,
+			wait = 1000;
+
+		function alive() {
+			clearTimeout(timeout);
+			spoiler.removeClass("_hidden");
+			timeout = setTimeout(remind, wait);
+		}
+
+		function remind() {
+			spoiler.addClass("_hidden");
+		}
+		spoiler.removeClass("_hidden");
+		$(".car-gallery-main").on("mousemove", function() {
+			alive();
+		});
+		$prev.on("click", function() {
+			alive();
+		});
+		$next.on("click", function() {
+			alive();
+		});
+		timeout = setTimeout(remind, wait);
 
 		if ($total) {
 			$total.text(totalSlides + 1);

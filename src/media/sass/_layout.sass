@@ -9,7 +9,7 @@
 
 .container
 	display: block
-	width: 1280px
+	width: 1320px
 	max-width: 100%
 	margin:  0 auto
 	padding: 0 
@@ -106,11 +106,11 @@
 			+offset-width($cols-total)
 
 .hidden-xs
-	+max-screen($screen-sm)
+	+max-screen($screen-md - 1px)
 		display: none !important
 
 .visible-xs
 	display: none !important 
-	+max-screen($screen-sm)
+	+max-screen($screen-md - 1px)
 		display: flex !important 
 		

@@ -9,7 +9,7 @@
         vertical-align: middle
         font-size: rem(16px)
         line-height: 20px
-        color: $grey_dark
+        color: $brand_color
     +min-screen($screen-md)
         margin-right: rem(40px)
         &:before
@@ -24,8 +24,12 @@
             &:not(:last-of-type)
                 border-right: 1px solid transparentize(#FFF, .8)
         &__label
-            color: $grey_dark
+            color: $brand_color
+            text-transform: uppercase
             @extend .transition
+            +min-screen($screen-md)
+                text-transform: none
+                color: $grey_dark
         &__input
             display: none
             &:checked

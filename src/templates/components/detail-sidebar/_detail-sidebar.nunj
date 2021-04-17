@@ -8,11 +8,16 @@
                 <div class="detail-sidebar__price">{{ props.item.price }} <span>за сутки</span></div>
             </div>
             <div class="detail-sidebar-head__col">
-                <ul class="detail-sidebar-price-list">
+                <ul class="detail-sidebar-price-list hidden-xs">
                     {% for price in props.item.priceDetail.slice(1,3) %}
                         <li class="detail-sidebar-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
                     {% endfor %}
                     <li class="detail-sidebar-price-list__item"><a href="/">Все акции и предложения</a></li>
+                </ul>
+                <ul class="detail-sidebar-price-list visible-xs">
+                    {% for price in props.item.priceDetail %}
+                        <li class="detail-sidebar-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -37,10 +42,11 @@
             </div>
             
             {{ button({
-                class: "_full",
+                class: "_full detail-sidebar__button",
                 text: detailSidebarContent.button,
                 attr: "data-popup-opener='request-auto'"
             })}}
+            <div class="detail-sidebar__backdrop visible-xs"></div>
             <div class="detail-sidebar-note hidden-xs">{{ detailSidebarContent.note }}</div>
         </div>
     </aside>

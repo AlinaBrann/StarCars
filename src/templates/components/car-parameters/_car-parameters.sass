@@ -13,21 +13,39 @@
         bottom: 0
         left: 0
         padding: rem(16px) rem(20px) 0
-        transform: translateY(30%)
         background: linear-gradient(180deg, rgba(9, 27, 36, 0) 0%, rgba(9, 27, 36, 0.85) 100%)
         @extend .transition
-        opacity: 0
+        +min-screen($screen-md)
+            transform: translateY(30%)
+            opacity: 0
     &__item
         position: relative
         display: flex
-        
         align-items: center
         text-align: center
         flex-direction: column
-        margin-bottom: rem(24px)
+        margin-bottom: rem(16px)
         font-size: rem(18px)
+        line-height: 1
+        ._hidden &
+            display: none
+            &:nth-of-type(-n+3)
+                display: flex
         +max-screen($screen-sm)
             flex: 33%
+            ._hidden &
+                flex: 0 0 auto
+                padding-right: 20px
+                flex-direction: row
+                white-space: nowrap
+                font-size: 16px
+                &:after
+                    +b
+                    +size(3px)
+                    top: 50%
+                    left: calc(100% - #{rem(12px)})
+                    border-radius: 50%
+                    background: transparentize(#FFF,.7)
         +min-screen($screen-md)
             text-align: left
             flex-direction: row
@@ -39,9 +57,15 @@
                 left: calc(100% - #{rem(17px)})
                 border-radius: 50%
                 background: transparentize(#FFF,.7)
+            ._big & 
+                font-size: rem(24px)
+                margin-bottom: rem(24px)
         &._nobullet
             &:after
                 display: none
     &__title
         margin-right: 6px
         color: $brand_color
+        ._hidden & 
+            +max-screen($screen-sm)
+                display: none

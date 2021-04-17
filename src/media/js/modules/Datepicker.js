@@ -44,7 +44,34 @@ $(".datepicker").daterangepicker(
 		locale: $ru,
 		autoApply: true,
 		minDate: today,
+		parentEl: ".detail-sidebar-wrapper",
 		opens: "left"
+	},
+	function(start, end, label) {
+		var a = new Date(start);
+		var b = new Date(end);
+		$('input[name="datefilter-start"]').val(start.format("MM/DD/YYYY"));
+		$('input[name="datefilter-end"]').val(end.format("MM/DD/YYYY"));
+		let days = $(".in-range");
+		$total.text(days.length + 1);
+		$startDay.text(start.format("DD"));
+		$startDayName.text($ru.daysOfWeek[a.getDay()]);
+		$startMonth.text($ru.monthNames[a.getMonth()]);
+
+		$endDay.text(end.format("DD"));
+		$endDayName.text($ru.daysOfWeek[b.getDay()]);
+		$endMonth.text($ru.monthNames[b.getMonth()]);
+	}
+);
+$(".datepicker").on("apply.daterangepicker", function(ev, picker) {
+	$(this).addClass("_active");
+});
+$(".datepicker-popup").daterangepicker(
+	{
+		locale: $ru,
+		autoApply: true,
+		minDate: today,
+		parentEl: ".popups-wrapper__content"
 	},
 	function(start, end, label) {
 		var a = new Date(start);
@@ -66,6 +93,10 @@ $start.on("click", function() {
 	$(this)
 		.parents(".popup-form")
 		.removeClass("_empty");
+	$(this)
+		.parents(".popup-form")
+		.find(".popup-clear-datepicker")
+		.hide();
 });
 $end.on("click", function() {
 	$(this)
