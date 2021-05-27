@@ -58,36 +58,7 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 			});
 		});
 
-		var fixedFilter = $('.filter-fixed'),
-			filter = fixedFilter.find('.filter-parameters'),
-			filterItem = filter.find('.filter-parameters-list__item');
-		if ($(window).width() <= 1124 && $(window).width() >= 869) {
-				$('.filter-fixed .filter-parameters._image-type').find('.filter-parameters-list__item').slice(2).addClass('_hidden')
-				$('.filter-fixed .filter-parameters._text-type').find('.show-more').hide()
-				filter.each(function(){
-					var childs = $(this).find('.filter-parameters-list__item').not('._hidden'),
-					length = childs.length
-					$(this).find('.show-more span').text(length)
-				})
-		}
 		
-		$('.show-more').click(function() {
-			
-			$(this).hide().parents('.filter-parameters').find('.filter-parameters-list__item').slice(2).toggleClass('_hidden');
-			$(this).parent('.filter-parameters').siblings('.filter-parameters').find('.filter-parameters-list__item').slice(2).addClass('_hidden');
-			var otherItem = $(this).parent('.filter-parameters').siblings('.filter-parameters').find('.filter-parameters-list__item._hidden'),
-			otherItemLength = otherItem.length;
-			$(this).parent('.filter-parameters').siblings('.filter-parameters').find('.show-more').show().find('span').text(otherItemLength)
-			$('.filter-parameters-list__item:not(._hidden):nth-of-type(2)').toggleClass('_nobullet')
-		
-		});
-		
-		$('.filter-trigger').on('click', function() {
-			$('.filter-fixed').toggleClass('_open')
-		})
-		$('.filter-backdrop').on('click', function() {
-			$('.filter-fixed').removeClass('_open')
-		})
 		
 		
 		$('.button-time-trigger').on('click', function(){

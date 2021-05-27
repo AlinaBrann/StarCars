@@ -45,8 +45,8 @@
 					margin-right: 21px
 					&:after
 						right: -13px
-					&._hidden
-						display: none
+				&._hidden
+					display: none
 	.filter
 		@extend .transition
 		+max-screen($screen-sm)
@@ -63,7 +63,11 @@
 	._image-type
 		.filter-parameters
 			&-list
-				
+				&__item
+					width: 80px
+					a
+						display: block
+						width: 100%
 				+max-screen($screen-md)
 					&__item
 						width: 60px
@@ -103,8 +107,8 @@
 		display: none
 		+min-screen($screen-md)
 			display: block
-		+min-screen($screen-lg)
-			display: none
+		// +min-screen($screen-lg)
+		// 	display: none
 		
 .filter-trigger
 	position: relative
