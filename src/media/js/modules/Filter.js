@@ -1,38 +1,64 @@
 function Filter() {
-	const slisedItem = 3;
-	const limit = 6;
+	let slisedItem = 3;
+	let limit = 6;
 	let fixedFilter = $(".filter-fixed"),
 		filter = fixedFilter.find(".filter-parameters"),
 		filterText = fixedFilter.find(".filter-parameters._text-type"),
 		filterImage = fixedFilter.find(".filter-parameters._image-type"),
 		filterItemImage = filterImage.find(".filter-parameters-list__item"),
 		filterItemText = filterText.find(".filter-parameters-list__item");
-	if (filterItemText.length >= limit && $(window).width() >= 869) {
+	if (window.innerWidth >= 1224) {
 		filterText.find(".show-more").hide();
-		filterItemImage.slice(slisedItem).addClass("_hidden");
-		filterItemText.slice(slisedItem).addClass("_hidden");
-		filterText.find(".show-more").show();
-	}
-	if (filterItemImage.length >= limit && $(window).width() >= 869) {
-		filterImage.find(".show-more").hide();
-		filterItemText.slice(slisedItem).addClass("_hidden");
-		filterItemImage.slice(slisedItem).addClass("_hidden");
-		filterImage.find(".show-more").show();
-	}
-	if (
-		(filterItemText.length >= limit && $(window).width() >= 869) ||
-		(filterItemImage.length >= limit && $(window).width() >= 869)
-	) {
-		filter.each(function() {
-			var childs = $(this).find(".filter-parameters-list__item._hidden"),
-				length = childs.length;
-			console.log(length);
-			$(this)
-				.find(".show-more span")
-				.text(length);
-		});
-	}
+		if (filterItemText.length > limit && $(window).width() >= 869) {
+			filterItemText.slice(slisedItem).addClass("_hidden");
+			filterText.find(".show-more").show();
+		}
+		if (filterItemImage.length > limit && $(window).width() >= 869) {
+			filterImage.find(".show-more").hide();
 
+			filterItemImage.slice(slisedItem).addClass("_hidden");
+			filterImage.find(".show-more").show();
+		}
+		if (
+			(filterItemText.length >= limit && $(window).width() >= 869) ||
+			(filterItemImage.length >= limit && $(window).width() >= 869)
+		) {
+			filter.each(function() {
+				var childs = $(this).find(".filter-parameters-list__item._hidden"),
+					length = childs.length;
+				console.log(length);
+				$(this)
+					.find(".show-more span")
+					.text(length);
+			});
+		}
+	} else if (window.innerWidth >= 1024) {
+		slisedItem = 2;
+		filterText.find(".show-more").hide();
+		if (filterItemText.length > limit && $(window).width() >= 869) {
+			filterItemText.slice(slisedItem).addClass("_hidden");
+			filterText.find(".show-more").show();
+		}
+		if (filterItemImage.length > limit && $(window).width() >= 869) {
+			filterImage.find(".show-more").hide();
+
+			filterItemImage.slice(slisedItem).addClass("_hidden");
+			filterImage.find(".show-more").show();
+		}
+		if (
+			(filterItemText.length >= limit && $(window).width() >= 869) ||
+			(filterItemImage.length >= limit && $(window).width() >= 869)
+		) {
+			filter.each(function() {
+				var childs = $(this).find(".filter-parameters-list__item._hidden"),
+					length = childs.length;
+				console.log(length);
+				$(this)
+					.find(".show-more span")
+					.text(length);
+			});
+		}
+	}
 	$(".show-more").on("click", function() {
 		let items = $(this)
 			.parents(".filter-parameters")

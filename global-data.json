@@ -228,6 +228,11 @@
 					"logo": "lamborghini.png",
 					"value": "lamborghini",
 					"path": "/"
+				},
+				{
+					"logo": "ferrari.svg",
+					"value": "ferrari",
+					"path": "/"
 				}
 			]
 		}

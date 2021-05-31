@@ -40,6 +40,7 @@
 		margin-bottom: 0
 		&-list
 			&__item
+				white-space: nowrap
 				+max-screen($screen-md)
 					font-size: 16px
 					margin-right: 21px
@@ -61,30 +62,41 @@
 			pointer-events: none
 
 	._image-type
+		+min-screen($screen-md)
+			justify-content: flex-end
 		.filter-parameters
 			&-list
+				display: flex
+				align-items: center
+				+min-screen($screen-md)
+					display: block
 				&__item
 					width: 80px
+					height: 100%
 					a
 						display: block
 						width: 100%
+					
 				+max-screen($screen-md)
 					&__item
-						width: 60px
-						flex: 0 0 60px
+						width: 50px
 						margin: 0
-						&:not(:last-of-type)
-							border-right: 1px solid $brand_color
+						&:not(:first-of-type)
+							border-left: 1px solid $brand_color
 					&__logo
 						max-height: rem(30px)
 				+max-screen($screen-sm)
 					flex-wrap: wrap
 					&__item
+						display: flex
+						align-items: center
 						height: 50px
 						margin-bottom: 12px
 						border: 2px solid #0F2733 
 						&:not(:last-of-type)
 							border: 2px solid #0F2733 
+						&:not(:first-of-type)
+							border: none
 						&._active
 							border-color: #194FDB
 							box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
