@@ -70,18 +70,18 @@ function Popups() {
 		self.close();
 	});
 
-	this.$wrapper.click(function(e) {
-		if (self.opened) {
-			let $target = $(e.target);
-			if (
-				!(
-					self.$activePopup.has($target).length || self.$activePopup.is($target)
-				)
-			) {
-				self.close();
-			}
-		}
-	});
+	// this.$wrapper.click(function(e) {
+	// 	if (self.opened) {
+	// 		let $target = $(e.target);
+	// 		if (
+	// 			!(
+	// 				self.$activePopup.has($target).length || self.$activePopup.is($target)
+	// 			)
+	// 		) {
+	// 			self.close();
+	// 		}
+	// 	}
+	// });
 
 	dom.$window.on("keydown", function(e) {
 		if (self.opened && e.keyCode == 27) {

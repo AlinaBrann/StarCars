@@ -1,6 +1,6 @@
 {% macro gallery(props) %}
     <div class="car-gallery _full-width">
-        <div data-slider="galleryMain" class="car-gallery-main">
+        <div data-slider="galleryMain" class="car-gallery-main hidden-xs">
             <div class="car-gallery-slider" data-slider-slides>
                 {% for item in props.item.gallery %}
                     <div class="car-gallery-slide">
@@ -37,6 +37,13 @@
                     </div>
                 {% endfor %}
             </div>
+        </div>
+        <div class="car-gallery-mobile visible-xs">
+            {% for item in props.item.gallery %}
+                <div class="car-gallery-mobile__item">
+                    <img src="media/img/cars/{{ item }}" class="car-gallery-mobile__img" alt="props.item.name">
+                </div>
+            {% endfor %}
         </div>
     </div>
     

@@ -11,6 +11,8 @@ const OPTIONS_BY_TYPE = {
 		fade: false,
 		focusOnSelect: true,
 		infinite: true,
+		swipeToSlide: true,
+		lazyLoad: "progressive",
 		responsive: [
 			{
 				breakpoint: 767,
