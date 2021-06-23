@@ -7,18 +7,15 @@
 	background: $body_bg
 	transform: translateY(0%)
 	@extend .transition
-	z-index: 100
+	z-index: 1000
 	+min-screen($screen-md)
 		&._toggle
 			transform: translateY(-100%)
 	&__container
 		position: relative
-		padding-top: 15px
 		+max-screen($screen-xs)
 			padding-left: 24px
 			padding-right: 24px
-		+min-screen($screen-md)
-			padding-top: 0
 		&:after
 			+b
 			bottom: 0
@@ -29,27 +26,38 @@
 			+min-screen($screen-lg)
 				left: $indent-col-md
 				width: calc(100% - #{$indent-col-md} * 2 )
+	&__top
+		position: relative
+		padding-top: 15px
+		padding-bottom: 12px
+		background: $body_bg
+		z-index: 1000
+		+min-screen($screen-md)
+			padding-top: 0
+			padding-bottom: 0
 	&-nav
 		display: flex
 		position: relative
 		justify-content: space-between
-		margin-top: 12px
-		&:after
-			+b
-			top: 0
-			left: -$indent-col-xs * 2
-			width: calc(100% + #{$indent-col-xs} * 4)
-			height: 1px
-			background: #0F2733
 		+min-screen($screen-xs)
 			align-items: center
 			justify-content: center
 		+min-screen($screen-md)
 			padding-top: 0
-			margin-top: 0
 			justify-content: flex-start
 			&:after
 				display: none
+		&-wrapper
+			position: relative
+			&:after
+				+b
+				top: 0px
+				left: -$indent-col-xs * 2
+				width: calc(100% + #{$indent-col-xs} * 4)
+				height: 1px
+				background: #0F2733
+				z-index: 1000
+
 		&__item
 			position: relative
 			padding: 12px 0 15px
@@ -92,4 +100,70 @@
 				+size(rem(25px))
 	&__location
 		color: $brand_color
+	&-menu
+		&-trigger
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			+size(rem(74px), rem(40px))
+			background: #0F2733
+			border-radius: rem(20px)
+			@extend .transition
+			&._active
+				background: $blue
+			&__icon
+				fill: none
+				&._close
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%,-50%)
+					opacity: 0
+					@extend .transition
+					._active &
+						transition-delay: 0.4s
+						opacity: 1
+				._active &
+					opacity: 0
+				&:first-of-type
+					margin-right: rem(10px)
+		&-contacts
+			position: absolute
+			display: flex
+			width: calc(100% + 48px)
+			top: 1px
+			left: -24px
+			justify-content: space-around
+			padding: rem(15px) 0
+			transform: translateY(-100%)
+			@extend .transition
+			background: $body_bg
+			z-index: 10
+			&._active
+				transform: translateY(0%)
+			&:after
+				+b
+				bottom: 0
+				left: 0px
+				width: 100%
+				height: 1px
+				background: #194FDB
+				background: #0F2733
+				z-index: 1
+			&__item
+				flex: 0 0 18%
+				text-align: center
+			&__icon
+				+size(rem(56px))
+				display: flex
+				margin: auto
+				align-items: center
+				justify-content: center
+				background: #0F2733
+				border-radius: 50%
+				&._tg
+					padding-right: rem(5px)
+				&._wu
+					padding-bottom: rem(2px)
 	

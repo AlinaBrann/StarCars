@@ -60,7 +60,10 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 
 		
 		
-		
+		$('.header-menu-trigger').on('click', function(){
+			$(this).toggleClass('_active')
+			$('.header-menu-contacts').toggleClass('_active')
+		})
 		$('.button-time-trigger').on('click', function(){
 			$(this).toggleClass('_active')
 			$(this).parent('.popup-form-time-block').toggleClass('_active')

@@ -3,7 +3,7 @@
 
 <header class="header">
     <div class="header__container container">
-        <div class="row _aic">
+        <div class="row _aic header__top">
             <div class="col-xs-4 col-sm-4 col-md-5 col-lg-4">
                 <a href="/" class="header__location visible-xs">Москва</a>
                 <menu class="header-nav hidden-xs">
@@ -24,15 +24,28 @@
             <div class="col-xs-4 col-sm-4 col-md-5 col-lg-4">
                 <div class="header-contacts flex _jcfe _aic">
 
-                    {% include '../language-switcher/_language-switcher.nunj'%}
-                    <a href="tel:{{ phone }}" class="header__phone visible-xs">
+                    <!-- {% include '../language-switcher/_language-switcher.nunj'%} -->
+                    
+                    <div class="header-menu-trigger visible-xs">
                         {{ icon({
-                            class: "header__phone-icon",
-                            name: "phone",
-                            width: "22",
-                            height: "22"
+                            class: "header-menu-trigger__icon",
+                            name: "phone-new",
+                            width: "20",
+                            height: "20"
                         }) }}
-                    </a>
+                        {{ icon({
+                            class: "header-menu-trigger__icon",
+                            name: "message-square",
+                            width: "20",
+                            height: "20"
+                        }) }}
+                        {{ icon({
+                            class: "header-menu-trigger__icon _close",
+                            name: "close-small",
+                            width: "24",
+                            height: "24"
+                        }) }}
+                    </div>
                     {{ socialContacts({
                         class: "_small _white hidden-xs"
                     }) }}
@@ -40,7 +53,7 @@
             </div>
         </div>
         <div class="row _aic">
-            <div class="col-xs-12 col-sm-12">
+            <div class="col-xs-12 col-sm-12 header-nav-wrapper">
                 <menu class="header-nav visible-xs">
                     {% for nav in menuItems %}
                         <li class="header-nav__item">
@@ -50,6 +63,29 @@
                         </li>
                     {% endfor %}
                 </menu>
+                <ul class="header-menu-contacts visible-xs">
+                    {% for cont in menuContacts %}
+                        <li class="header-menu-contacts__item">
+                            <a href="{{ cont.link }}">
+                                <div class="header-menu-contacts__icon">
+                                    {% if cont.iconName %}
+                                        {{ icon({
+                                            class: "_" + cont.iconName,
+                                            name: cont.iconName,
+                                            width: "27",
+                                            height: "27",
+                                            fill: "#FFF"
+                                        }) }}
+                                    {% else %}
+                                        {{ cont.svgCode }}
+                                    {% endif%}
+                                </div>
+
+                                <span>{{ cont.text }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

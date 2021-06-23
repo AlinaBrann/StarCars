@@ -15,11 +15,11 @@
                 <li class="detail-sidebar__all hidden-xs"><a href="/">Все акции и предложения</a></li>
                
             </div>
-            <div class="detail-sidebar-head__col">
+            <div class="detail-sidebar-head__col visible-xs">
                 <div class="detail-sidebar-head__title">Акции</div>
-                <ul class="etail-sidebar-price-list">
+                <ul class="detail-sidebar-price-list _promo">
                     {% for promo in props.item.promotions %}
-                        <li class="etail-sidebar-price-list__item">{{ promo.title }} <span>{{ promo.value }}</span></li>
+                        <li class="detail-sidebar-price-list__item">{{ promo.title }} <span>{{ promo.value }}</span></li>
                     {% endfor %}
                 </ul>
             </div>
