@@ -25,6 +25,12 @@
             </div>
         </div>
         <div class="detail-sidebar-body">
+            <div class="visible-xs">
+                <div class="detail-sidebar-result__col">
+                        <span>{{ carRental.deposit }}</span>
+                        <div class="detail-sidebar-total-days">130 000 ₽</div>
+                    </div>
+            </div>
             <div class="hidden-xs">
                 <div class="detail-sidebar-body__title">{{ detailSidebarContent.title }}</div>
                 {{ datepicker()}}

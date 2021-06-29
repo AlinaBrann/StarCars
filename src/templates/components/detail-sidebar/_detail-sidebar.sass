@@ -2,14 +2,18 @@
     position: relative
     flex-direction: column
     background: #0F2733
+    padding: 20px 20px 16px
     z-index: 100
+    +min-screen($screen-md)
+        padding: 0
     &-head
         display: flex
         justify-content: space-between
-        padding: 20px 20px 12px
+        padding: 0 0 15px
+        border-bottom: 1px solid $brand_color
         +min-screen($screen-md)
             display: block
-            padding: rem(22px) rem(20px) rem(17px)
+            padding: rem(22px) rem(20px) rem(25px)
             border-bottom: 1px solid $body_bg
         &__title
             padding-bottom: 10px
@@ -17,15 +21,21 @@
             border-bottom: 1px solid transparentize($brand_color, .7)
             +min-screen($screen-md)
                 padding: 0
-                margin-bottom: rem(10px)
+                margin-bottom: rem(20px)
                 text-align: center
                 font-size: rem(30px)
                 border: none
         &__col
             +max-screen($screen-sm - 1px)
-                flex: 0 0 45%
+                flex: 0 1 45%
                 flex-direction: column
                 font-size: rem(18px)
+                &:first-of-type
+                    flex: auto
+                    margin-right: 43px
+                &:last-of-type
+                    flex: 1 0 0
+                    white-space: nowrap
     &__all
         flex: 0
         text-align: center
@@ -56,18 +66,35 @@
                     margin-top: rem(8px)
             +min-screen($screen-md)
                 display: block
-                margin-bottom: rem(8px)
-                font-size: rem(14px)
+                flex: 1 0 0
+                position: relative
+                margin-bottom: rem(20px)
+                font-size: rem(16px)
+                &:not(:last-of-type)
+                    &:after
+                        +b
+                        top: 50%
+                        right: rem(7px)
+                        width: rem(8px)
+                        height: rem(48px)
+                        transform: translateY(-50%)
+                        background: url('../img/arrow-blue-big.svg') no-repeat center
+                        background-size: contain
+                ._day
+                    display: none
             span
+                display: flex
                 color: #FFF                
                 +min-screen($screen-md)
                     display: block
+                    font-size: rem(18px)
+                    line-height: 1.7
             a
                 box-shadow: 0px 1px 0px rgba(150, 184, 191, 0.4)
                 &:hover
                     box-shadow: none
     &-body
-        padding: 0px
+        padding: 16px 0px 0
         +min-screen($screen-md)
             padding: rem(20px) rem(20px) rem(33px)
         &__title
@@ -78,14 +105,23 @@
     &-result
         margin-bottom: rem(40px)
         &__col
+            display: flex
             flex: 1 1 0
             text-align: center
-            font-size: rem(16px)
-            span
+            font-size: 18px
+            +min-screen($screen-md)
                 display: block
-                margin-bottom: rem(5px)
+                font-size: rem(16px)
+            span
+                display: inline-block
+                margin-right: 7px
                 color: $brand_color
-                font-size: 16px
+                font-size: 18px
+                +min-screen($screen-md)
+                    margin-bottom: rem(5px)
+                    margin-right: 0
+                    font-size: rem(16px)
+                
     &-note
         margin-top: rem(16px)
         text-align: center

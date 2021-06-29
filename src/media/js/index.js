@@ -64,6 +64,13 @@ global.ProjectName = new function StarCars() { // eslint-disable-line
 			$(this).toggleClass('_active')
 			$('.header-menu-contacts').toggleClass('_active')
 		})
+		$(document).on('mouseup', function (e) {
+			var container = $('.header');
+			if (container.has(e.target).length === 0){
+				$('.header-menu-contacts').removeClass('_active')
+				$('.header-menu-trigger').removeClass('_active')
+			}
+		});
 		$('.button-time-trigger').on('click', function(){
 			$(this).toggleClass('_active')
 			$(this).parent('.popup-form-time-block').toggleClass('_active')

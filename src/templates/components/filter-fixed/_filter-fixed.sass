@@ -4,7 +4,7 @@
 	left: 0
 	width: 100%
 	display: flex
-	transform: translateY(-100%)
+	transform: translateY(-120%)
 	@extend .transition
 	background: $body_bg
 	z-index: 1000
@@ -64,6 +64,7 @@
 	._image-type
 		+min-screen($screen-md)
 			justify-content: flex-end
+			align-items: center
 		.filter-parameters
 			&-list
 				display: flex
@@ -72,7 +73,7 @@
 					display: block
 				&__item
 					width: 80px
-					height: 100%
+					height: 40px
 					a
 						display: block
 						width: 100%
