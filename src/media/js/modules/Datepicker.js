@@ -52,7 +52,7 @@ $(".datepicker").daterangepicker(
 		var b = new Date(end);
 		$('input[name="datefilter-start"]').val(start.format("MM/DD/YYYY"));
 		$('input[name="datefilter-end"]').val(end.format("MM/DD/YYYY"));
-		let days = $(".in-range");
+		let days = $(".in-range:not(.off)");
 		$total.text(days.length + 1);
 		$startDay.text(start.format("DD"));
 		$startDayName.text($ru.daysOfWeek[a.getDay()]);
