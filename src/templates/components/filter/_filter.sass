@@ -49,6 +49,10 @@
 			flex-wrap: wrap
 			align-items: center
 			justify-content: center
+			._text-type &
+				padding: 0 20px
+				+min-screen($screen-sm)
+					padding: 0
 			.filter-fixed &
 				margin-bottom: 19px
 				justify-content: flex-start
@@ -66,6 +70,7 @@
 				@extend .transition
 				._text-type &
 					margin-right: 20px
+					margin-bottom: 10px
 					font-size: 18px
 					line-height: 2
 					&:after
@@ -77,6 +82,7 @@
 						border-radius: 50%
 					
 					+min-screen($screen-sm)
+						margin-bottom: 0
 						margin-right: 56px
 						&:after
 							right: -32px
@@ -135,7 +141,7 @@
 
 				&:before
 					+b
-					top: calc(100% + 7px)
+					top: 100%
 					left: 0
 					width: 100%
 					opacity: 0
@@ -143,6 +149,8 @@
 					background: #194FDB
 					box-shadow: 0px 4px 10px rgba(25, 79, 219, 0.7)
 					@extend .transition
+					+min-screen($screen-sm)
+						top: calc(100% + 7px)
 				&._active
 					&:before
 						opacity: 1

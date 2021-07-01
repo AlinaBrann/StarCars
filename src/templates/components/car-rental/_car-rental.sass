@@ -4,7 +4,7 @@
         margin-bottom: rem(25px)
         font-size: rem(48px)
     &-row
-        margin-bottom: rem(24px)
+        margin-bottom: rem(20px)
         border-bottom: 1px solid transparentize($brand_color, .7)
     &-col
         flex: auto
@@ -12,27 +12,35 @@
         &:first-of-type
             margin-right: rem(35px)
         &__title
-            margin-bottom: rem(22px)
-            font-size: rem(24px)
+            margin-bottom: rem(18px)
+            font-size: rem(21.6px)
     &-price-list
         display: flex
         &__item
             display: flex
-            flex-direction: column
             flex: 1 1 0
             color: $brand_color
-            font-size: rem(16px)
+            font-size: rem(14px)
             white-space: nowrap
+            flex-wrap: wrap
+            justify-content: flex-start
+            align-items: flex-start
             &:not(:last-of-type)
-                padding-right: rem(24px)
+                padding-right: rem(16px)
                 border-right: 1px solid transparentize($brand_color, .7)
             &:not(:first-of-type)
-                padding-left: rem(24px)
+                padding-left: rem(16px)
             span
+                display: flex
+                margin-top: rem(5px)
                 color: #FFF
                 font-size: rem(24px)
+                line-height: 1
+            .helper
+                svg
+                    margin: 0 0 -6px 8px
     &-deposit
-        font-size: rem(24px)
+        font-size: rem(21.5px)
         color: $brand_color
         span
             color: #FFF

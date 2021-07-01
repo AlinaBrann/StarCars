@@ -247,3 +247,29 @@ body
 
 .cars
 	margin-bottom: 30px
+
+.helper
+	$parent: &
+	position: relative
+	display: inline-block
+	width: 20px
+	cursor: pointer
+	svg
+		fill: none
+		margin: 0 0 -3px 2px
+	&__text
+		position: absolute
+		top: 100%
+		right: 0
+		padding: 15px
+		background: $blue
+		color: #FFF
+		border-radius: 7px
+		opacity: 0
+		pointer-events: none
+		@extend .transition
+	&:hover
+		#{$parent}
+			&__text
+				opacity: 1
+				pointer-events: all

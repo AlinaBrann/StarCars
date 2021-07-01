@@ -1,3 +1,5 @@
+{% from "../icon/_icon.nunj" import icon %}
+
 {% macro rental(props) %}
     <div class="car-rental hidden-xs">
         <div class="row">
@@ -16,7 +18,22 @@
                         <div class="car-rental-col__title">{{ carRental.promotions }}</div>
                         <ul class="car-rental-price-list">
                             {% for price in props.item.promotions %}
-                                <li class="car-rental-price-list__item">{{ price.title }} <span>{{ price.value }}</span></li>
+                                <li class="car-rental-price-list__item flex">
+                                    {{ price.title }} 
+                                    <div class="helper">
+                                        {{ icon({
+                                            name: "help-circle",
+                                            width: "16",
+                                            height: "16"
+                                        })}}
+                                        <div class="helper__text">
+                                            Утро: 08:00 - 12:00
+                                            <br>Ночь: 20:00 - 08:00.
+                                            <br>Доставка не включена.
+                                        </div>
+                                    </div>
+                                    <span>{{ price.value }}</span>
+                                </li>
                             {% endfor %}
                         </ul>
                     </div>

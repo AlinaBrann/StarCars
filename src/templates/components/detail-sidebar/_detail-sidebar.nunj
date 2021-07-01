@@ -1,5 +1,6 @@
 {% from "../datepicker/_datepicker.nunj" import datepicker %}
 {% from "../button/_button.nunj" import button %}
+{% from "../icon/_icon.nunj" import icon %}
 
 {% macro detailSidebar(props) %}
     <aside class="detail-sidebar{% if props.class %} {{ props.class }}{% endif %}">
@@ -16,10 +17,32 @@
                
             </div>
             <div class="detail-sidebar-head__col visible-xs">
-                <div class="detail-sidebar-head__title">Акции</div>
+                <div class="detail-sidebar-head__title">
+                    Акции
+                    
+                </div>
                 <ul class="detail-sidebar-price-list _promo">
                     {% for promo in props.item.promotions %}
-                        <li class="detail-sidebar-price-list__item">{{ promo.title }} <span>{{ promo.value }}</span></li>
+                        <li class="detail-sidebar-price-list__item">
+                            <div class="detail-sidebar-price-list__row">
+                                {{ promo.title }} 
+                                <div class="helper">
+                                    {{ icon({
+                                        name: "help-circle",
+                                        width: "16",
+                                        height: "16"
+                                    })}}
+                                    <div class="helper__text">
+                                        Утро: 08:00 - 12:00
+                                        <br>Ночь: 20:00 - 08:00.
+                                        <br>Доставка не включена.
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <span>{{ promo.value }}</span>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -27,9 +50,9 @@
         <div class="detail-sidebar-body">
             <div class="visible-xs">
                 <div class="detail-sidebar-result__col">
-                        <span>{{ carRental.deposit }}</span>
-                        <div class="detail-sidebar-total-days">130 000 ₽</div>
-                    </div>
+                    <span>{{ carRental.deposit }}</span>
+                    <div class="detail-sidebar-total-days">130 000 ₽</div>
+                </div>
             </div>
             <div class="hidden-xs">
                 <div class="detail-sidebar-body__title">{{ detailSidebarContent.title }}</div>
